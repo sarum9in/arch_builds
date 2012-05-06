@@ -1,0 +1,42 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+pkgname=zeromq
+pkgver=3.1.0
+pkgrel=1
+epoch=
+pkgdesc="Fast messaging system built on sockets. AKA 0MQ, ZMQ."
+arch=('i686' 'x86_64')
+url="http://www.zeromq.org/"
+license=('LGPL')
+groups=()
+depends=()
+makedepends=('asciidoc' 'xmlto')
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("http://download.zeromq.org/$pkgname-$pkgver-beta.tar.gz")
+noextract=()
+md5sums=('c9615e4442b325bd0c23a8205e380c40')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./configure --prefix=/usr
+  make $MAKEFLAGS
+}
+
+check() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make -k check
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+}
+
+# vim:set ts=2 sw=2 et:
