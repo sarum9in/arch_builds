@@ -1,0 +1,51 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+pkgname=bacs.xsd-git
+pkgver=20120506
+pkgrel=1
+pkgdesc="BACS XSD library"
+arch=('any')
+url="http://bacs.cs.istu.ru"
+license=('GPL')
+groups=()
+depends=('python2' 'python2-pyxb')
+makedepends=('git')
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+source=()
+noextract=()
+md5sums=()
+
+_gitroot=git://cs.istu.ru/bunsan_bacs_xsd.git
+_gitname=bacs_xsd
+
+build() {
+  cd "$srcdir"
+  msg "Connecting to GIT server...."
+
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
+    msg "The local files are updated."
+  else
+    git clone "$_gitroot" "$_gitname"
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting build..."
+
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
+
+  ./gen.py
+}
+
+package() {
+  cd "$srcdir/$_gitname-build"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:
