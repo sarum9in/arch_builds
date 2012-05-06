@@ -1,12 +1,12 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=('bunsan.pm-git' 'python-bunsan.pm-git')
-pkgver=20120320
+pkgver=20120506
 pkgrel=1
 arch=('i686' 'x86_64')
 url=""
 license=('GPL')
 groups=()
-makedepends=('git' 'python' 'cython')
+makedepends=('git' 'python' 'cython' 'crypto++')
 provides=()
 conflicts=()
 replaces=()

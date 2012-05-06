@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bunsan.utility-git
-pkgver=20120407
+pkgver=20120506
 pkgrel=1
 pkgdesc="bunsan project utility library"
 arch=('i686' 'x86_64')

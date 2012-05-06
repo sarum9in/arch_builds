@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=('bunsan.common-git' 'python-bunsan.common-git')
-pkgver=20120407
+pkgver=20120506
 pkgrel=1
 arch=('i686' 'x86_64')
 url=""
@@ -54,7 +54,7 @@ check() {
 
 package_bunsan.common-git() {
   pkgdesc="bunsan project common library"
-  depends=('xmlrpc-c' 'boost-libs' 'zeromq' 'boost.process')
+  depends=('xmlrpc-c' 'boost-libs' 'zeromq' 'cppzmq' 'boost.process')
   cd "$srcdir/$_gitname-build/build"
   make DESTDIR="$pkgdir/" install
 }
