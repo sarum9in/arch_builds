@@ -1,0 +1,68 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+pkgname=('bunsan.common-git' 'python-bunsan.common-git')
+pkgver=20120407
+pkgrel=1
+arch=('i686' 'x86_64')
+url=""
+license=('GPL')
+groups=()
+makedepends=('git' 'python')
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+source=()
+noextract=()
+md5sums=()
+
+_gitroot="git://cs.istu.ru/bunsan_common.git"
+#_gitroot="/home/lex/istu/dev/bunsan/common/.git"
+_gitname="common"
+
+build() {
+  cd "$srcdir"
+  msg "Connecting to GIT server...."
+
+  if [ -d $_gitname ] ; then
+    cd $_gitname && git pull origin
+    msg "The local files are updated."
+  else
+    git clone $_gitroot $_gitname
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting make..."
+
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
+
+  mkdir build && cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  make $MAKEFLAGS
+
+  cd "$srcdir/$_gitname-build"
+  python setup.py build
+}
+
+check() {
+  cd "$srcdir/$_gitname-build/build"
+  make test
+}
+
+package_bunsan.common-git() {
+  pkgdesc="bunsan project common library"
+  depends=('xmlrpc-c' 'boost-libs' 'zeromq' 'boost.process')
+  cd "$srcdir/$_gitname-build/build"
+  make DESTDIR="$pkgdir/" install
+}
+
+package_python-bunsan.common-git() {
+  pkgdesc="bunsan root python package"
+  depends=('python' 'bunsan.common-git')
+  cd "$srcdir/$_gitname-build"
+  python setup.py install --root="$pkgdir/" --optimize=1
+}
+
