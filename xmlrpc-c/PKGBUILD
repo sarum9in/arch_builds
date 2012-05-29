@@ -40,7 +40,7 @@ build() {
 
   #./autogen.sh
   #patch -Np0 -i "${srcdir}/callInfo.patch"
-  ./configure
+  ./configure \
         --prefix=/usr \
         --disable-wininet-client \
         --enable-curl-client \
