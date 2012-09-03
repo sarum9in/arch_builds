@@ -1,14 +1,14 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname=yandex.contest.common-git
+pkgname=yandex.contest.invoker-git
 pkgver=20120903
 pkgrel=1
-pkgdesc="Yandex.Contest common utilities"
+pkgdesc="Yandex.Contest.Compat common utilities"
 arch=('i686' 'x86_64')
-url="https://github.com/lex4051/yandex_contest_common"
+url="https://github.com/lex4051/yandex_contest_invoker_compat_common"
 license=('GPL')
 groups=()
-depends=('boost-libs')
-makedepends=('git' 'cmake' 'boost')
+depends=('boost-libs' 'yandex.contest.invoker-git')
+makedepends=('git' 'boost')
 provides=()
 conflicts=()
 replaces=()
@@ -19,8 +19,8 @@ source=()
 noextract=()
 md5sums=()
 
-_gitroot="git://github.com/lex4051/yandex_contest_common.git"
-_gitname="common"
+_gitroot="git://github.com/lex4051/yandex_contest_invoker_compat_common.git"
+_gitname="invoker_compat_common"
 
 build() {
   cd "$srcdir"
@@ -47,7 +47,7 @@ build() {
 
 check() {
   cd "$srcdir/$_gitname-build/build"
-  make test
+  #make test
 }
 
 package() {
