@@ -17,7 +17,7 @@ options=()
 install=
 source=('lxc.conf' 'yandex-contest-invoker.sh')
 noextract=()
-md5sums=('e385cfa4407e3fe0db4bf4859c64e531'
+md5sums=('086993bd0c45821f1732f9d7f53c12e8'
          '035bc83489dbed92e8bed93b2915c002')
 
 _gitroot="git://github.com/lex4051/yandex_contest_invoker.git"
