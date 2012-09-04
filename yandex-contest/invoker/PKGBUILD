@@ -57,4 +57,5 @@ package() {
   install -m 644 -D "$srcdir/lxc.conf" "$pkgdir/etc/yandex/contest/invoker/lxc.conf"
   sed -r "s|__ARCH__|$CARCH|" -i "$pkgdir/etc/yandex/contest/invoker/lxc.conf"
   install -m 755 -D "$srcdir/yandex-contest-invoker.sh" "$pkgdir/etc/profile.d/yandex-contest-invoker.sh"
+  install -d "$pkgdir/var/lib/yandex/contest/invoker/lxc"
 }
