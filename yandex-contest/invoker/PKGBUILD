@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=yandex.contest.invoker-git
-pkgver=20120903
+pkgver=20120904
 pkgrel=1
 pkgdesc="Yandex.Contest.Invoker"
 arch=('i686' 'x86_64')
@@ -15,9 +15,10 @@ replaces=()
 backup=()
 options=()
 install=
-source=()
+source=('lxc.conf' 'yandex-contest-invoker.sh')
 noextract=()
-md5sums=()
+md5sums=('e385cfa4407e3fe0db4bf4859c64e531'
+         '035bc83489dbed92e8bed93b2915c002')
 
 _gitroot="git://github.com/lex4051/yandex_contest_invoker.git"
 _gitname="invoker"
@@ -53,4 +54,7 @@ check() {
 package() {
   cd "$srcdir/$_gitname-build/build"
   make DESTDIR="$pkgdir/" install
+  install -m 644 -D "$srcdir/lxc.conf" "$pkgdir/etc/yandex/contest/invoker/lxc.conf"
+  sed -r "s|__ARCH__|$CARCH|" -i "$pkgdir/etc/yandex/contest/invoker/lxc.conf"
+  install -m 755 -D "$srcdir/yandex-contest-invoker.sh" "$pkgdir/etc/profile.d/yandex-contest-invoker.sh"
 }
