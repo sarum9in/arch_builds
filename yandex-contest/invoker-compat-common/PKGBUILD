@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname=yandex.contest.invoker-git
-pkgver=20120903
+pkgname=yandex.contest.invoker.compat.common-git
+pkgver=20120908
 pkgrel=1
 pkgdesc="Yandex.Contest.Compat common utilities"
 arch=('i686' 'x86_64')
