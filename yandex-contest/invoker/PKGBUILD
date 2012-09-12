@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=yandex.contest.invoker-git
-pkgver=20120904
+pkgver=20120912
 pkgrel=1
 pkgdesc="Yandex.Contest.Invoker"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ options=()
 install=
 source=('lxc.conf' 'yandex-contest-invoker.sh')
 noextract=()
-md5sums=('086993bd0c45821f1732f9d7f53c12e8'
+md5sums=('10a541a10640aff197fd79b4de006c1f'
          '035bc83489dbed92e8bed93b2915c002')
 
 _gitroot="git://github.com/lex4051/yandex_contest_invoker.git"
