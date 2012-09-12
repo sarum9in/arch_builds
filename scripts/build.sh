@@ -14,16 +14,32 @@ else
 
     run_makepkg()
     {
+        rm -f *.pkg.tar.xz
         makepkg -os --asroot --noconfirm
         chown "$user:$group" -R .
         su "$user" -c 'makepkg -f'
+    }
+
+    install_main()
+    {
         makepkg -i --asroot --noconfirm
+    }
+
+    install_dep()
+    {
+        pacman -U --asdeps --noconfirm *.pkg.tar.xz
     }
 
     for i in `tsort dependencies`
     do
         pushd "$i"
         run_makepkg
+        if fgrep "$i" install >/dev/null 2>&1
+        then
+            install_main
+        else
+            install_dep
+        fi
         popd
     done
 fi
