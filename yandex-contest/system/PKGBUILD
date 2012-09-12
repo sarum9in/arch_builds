@@ -1,10 +1,10 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=yandex.contest.system-git
-pkgver=20120910
+pkgver=20120912
 pkgrel=1
 pkgdesc="Yandex.Contest system utilities"
 arch=('i686' 'x86_64')
-url="https://github.com/lex4051/yandex_contest_system"
+url="https://github.com/sarum9in/yandex_contest_system"
 license=('GPL')
 groups=()
 depends=('boost-libs' 'lxc' 'pkgconfig' 'yandex.contest.common-git')
@@ -19,7 +19,7 @@ source=()
 noextract=()
 md5sums=()
 
-_gitroot="git://github.com/lex4051/yandex_contest_system.git"
+_gitroot="git://github.com/sarum9in/yandex_contest_system.git"
 _gitname="system"
 
 build() {
