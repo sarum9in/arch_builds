@@ -20,7 +20,7 @@ noextract=()
 md5sums=()
 
 _gitroot="git://cs.istu.ru/bunsan_worker.git"
-#_gitroot="/home/lex/istu/dev/bunsan/worker/.git"
+#_gitroot="git://github.com/sarum9in/bunsan_worker.git"
 _gitname="worker"
 
 build() {

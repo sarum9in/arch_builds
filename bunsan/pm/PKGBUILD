@@ -1,9 +1,9 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=('bunsan.pm-git' 'python-bunsan.pm-git')
-pkgver=20120506
+pkgver=20120613
 pkgrel=1
 arch=('i686' 'x86_64')
-url=""
+url="https://github.com/sarum9in/bunsan_pm"
 license=('GPL')
 groups=()
 makedepends=('git' 'python' 'cython' 'crypto++')
@@ -17,8 +17,7 @@ source=()
 noextract=()
 md5sums=()
 
-_gitroot="git://cs.istu.ru/bunsan_pm.git"
-#_gitroot="/home/lex/istu/dev/bunsan/pm/.git"
+_gitroot="git://github.com/sarum9in/bunsan_pm.git"
 _gitname="pm"
 
 build() {

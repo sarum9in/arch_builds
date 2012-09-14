@@ -1,10 +1,10 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bunsan.utility-git
-pkgver=20120506
+pkgver=20120613
 pkgrel=1
 pkgdesc="bunsan project utility library"
 arch=('i686' 'x86_64')
-url=""
+url="https://github.com/sarum9in/bunsan_utility"
 license=('GPL')
 groups=()
 depends=('bunsan.common-git' 'boost-libs')
@@ -19,8 +19,8 @@ source=()
 noextract=()
 md5sums=()
 
-_gitroot="git://cs.istu.ru/bunsan_utility.git"
-#_gitroot="/home/lex/istu/dev/bunsan/utility/.git"
+#_gitroot="git://cs.istu.ru/bunsan_utility.git"
+_gitroot="git://github.com/sarum9in/bunsan_utility.git"
 _gitname="utility"
 
 build() {

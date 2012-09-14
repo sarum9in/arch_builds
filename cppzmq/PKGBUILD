@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=cppzmq-git
-pkgver=20120506
+pkgver=20120512
 pkgrel=1
 pkgdesc="This is C++ binding for 0MQ"
 arch=(any)

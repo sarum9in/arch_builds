@@ -20,7 +20,7 @@ noextract=()
 md5sums=()
 
 _gitroot="git://cs.istu.ru/bunsan_lua.git"
-#_gitroot="/home/lex/istu/dev/bunsan/lua/.git"
+#_gitroot="git://github.com/sarum9in/bunsan_lua.git"
 _gitname="lua"
 
 build() {

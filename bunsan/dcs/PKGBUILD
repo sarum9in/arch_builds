@@ -19,8 +19,8 @@ source=()
 noextract=()
 md5sums=()
 
-#_gitroot="/home/lex/istu/dev/bunsan/dcs/.git"
-_gitroot="git://cs.istu.ru/bunsan_dcs.git"
+#_gitroot="git://cs.istu.ru/bunsan_dcs.git"
+_gitroot="git://github.com/sarum9in/bunsan_dcs.git"
 _gitname="dcs"
 
 build() {
