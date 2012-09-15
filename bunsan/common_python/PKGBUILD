@@ -1,14 +1,14 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname='bunsan.common-git'
+pkgname='python-bunsan.common-git'
 pkgver=20120915
 pkgrel=1
-pkgdesc="bunsan project common library"
+pkgdesc="bunsan root python package"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_common"
+url="https://github.com/sarum9in/bunsan_common_python"
 license=('GPL')
 groups=()
-depends=('xmlrpc-c' 'boost-libs' 'zeromq' 'cppzmq' 'boost.process')
-makedepends=('git' 'cmake')
+depends=('python' 'bunsan.common-git')
+makedepends=('git' 'python')
 provides=()
 conflicts=()
 replaces=()
@@ -19,9 +19,9 @@ source=()
 noextract=()
 md5sums=()
 
-#_gitroot="git://cs.istu.ru/bunsan_common.git"
-_gitroot="git://github.com/sarum9in/bunsan_common.git"
-_gitname="common"
+#_gitroot="git://cs.istu.ru/bunsan_common_python.git"
+_gitroot="git://github.com/sarum9in/bunsan_common_python.git"
+_gitname="common_python"
 
 build() {
   cd "$srcdir"
@@ -41,17 +41,15 @@ build() {
   git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
   cd "$srcdir/$_gitname-build"
 
-  mkdir build && cd build
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
-  make $MAKEFLAGS
+  python setup.py build
 }
 
 check() {
   cd "$srcdir/$_gitname-build/build"
-  make test
+  #make test
 }
 
 package() {
-  cd "$srcdir/$_gitname-build/build"
-  make DESTDIR="$pkgdir/" install
+  cd "$srcdir/$_gitname-build"
+  python setup.py install --root="$pkgdir/" --optimize=1
 }

@@ -1,12 +1,14 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname=('bunsan.pm-git' 'python-bunsan.pm-git')
+pkgname='bunsan.pm-git'
 pkgver=20120613
 pkgrel=1
+pkgdesc="bunsan pm"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_pm"
 license=('GPL')
 groups=()
-makedepends=('git' 'python' 'cython' 'crypto++')
+depends=('bunsan.common-git' 'bunsan.utility-git' 'crypto++')
+makedepends=('git' 'cmake')
 provides=()
 conflicts=()
 replaces=()
@@ -41,10 +43,6 @@ build() {
   mkdir build && cd build
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
   make $MAKEFLAGS
-
-  cd "$srcdir/$_gitname-build"
-  python setup.py build_ext -Lbuild
-  python setup.py build
 }
 
 check() {
@@ -52,17 +50,7 @@ check() {
   make test
 }
 
-package_bunsan.pm-git() {
-  pkgdesc="bunsan pm"
-  depends=('bunsan.common-git' 'bunsan.utility-git' 'crypto++')
+package() {
   cd "$srcdir/$_gitname-build/build"
   make DESTDIR="$pkgdir/" install
 }
-
-package_python-bunsan.pm-git() {
-  pkgdesc="bunsan pm python wrapper"
-  depends=('python-bunsan.common-git' 'bunsan.pm-git' 'cython')
-  cd "$srcdir/$_gitname-build"
-  python setup.py install --root="$pkgdir/" --optimize=1
-}
-

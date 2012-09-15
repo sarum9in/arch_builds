@@ -8,7 +8,7 @@ url="https://github.com/sarum9in/bunsan_utility"
 license=('GPL')
 groups=()
 depends=('bunsan.common-git' 'boost-libs')
-makedepends=('git')
+makedepends=('git' 'cmake')
 provides=()
 conflicts=()
 replaces=()
@@ -54,4 +54,4 @@ check() {
 package() {
   cd "$srcdir/$_gitname-build/build"
   make DESTDIR="$pkgdir/" install
-} 
+}

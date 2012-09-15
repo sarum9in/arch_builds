@@ -8,7 +8,7 @@ url=""
 license=('GPL')
 groups=()
 depends=('xmlrpc-c' 'boost-libs' 'zeromq')
-makedepends=('git')
+makedepends=('git' 'cmake')
 provides=()
 conflicts=()
 replaces=()
@@ -56,4 +56,4 @@ build() {
 package() {
   cd "$srcdir/$_gitname-build/build"
   make DESTDIR="$pkgdir/" install
-} 
+}
