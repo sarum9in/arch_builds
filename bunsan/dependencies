@@ -1,5 +1,6 @@
 common utility
 utility pm
+common_python pm_python
 ../xmlrpc-c common
 ../cppzmq common
 ../zeromq ../cppzmq

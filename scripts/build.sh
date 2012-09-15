@@ -4,13 +4,13 @@ if [[ $EUID != 0 ]]
 then
     user="$(id -un)"
     group="$(id -gn)"
-    sudo "$0" "$user" "$group"
+    exec sudo "$0" "$user" "$group" "$@"
 else
     root="$(dirname "$0")/.."
     package_set="$(basename "$PWD")"
     user="$1"
     group="$2"
-    shift
+    target="$3" # not essential
 
     run_makepkg()
     {
@@ -34,13 +34,17 @@ else
     do
         pushd "$i"
         run_makepkg
-        if fgrep "$i" install >/dev/null 2>&1
+        if [[ $i = $target ]] || fgrep "$i" install >/dev/null 2>&1
         then
             install_main
         else
             install_dep
         fi
         popd
+        if [[ $i = $target ]]
+        then
+            break
+        fi
     done
 fi
 
