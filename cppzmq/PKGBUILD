@@ -48,4 +48,4 @@ build() {
 package() {
   cd "$srcdir/$_gitname-build"
   install -D -m 644 "zmq.hpp" "$pkgdir/usr/include/zmq.hpp"
-} 
+}

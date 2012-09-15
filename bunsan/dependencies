@@ -1,5 +1,5 @@
-utility pm
 common utility
+utility pm
 ../xmlrpc-c common
 ../cppzmq common
 ../zeromq ../cppzmq
