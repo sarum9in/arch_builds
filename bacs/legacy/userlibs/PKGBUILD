@@ -1,0 +1,36 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+pkgname=bacs_legacy_userlibs
+pkgver=2
+pkgrel=2
+epoch=
+pkgdesc="Library for advanced C++ course"
+arch=('any')
+url=""
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=('depthlib.h' 'pqueue.h')
+noextract=()
+md5sums=('238ef7d3a8f9da70eed7cd2ee963dcf9'
+         'f339741745f7670873bd70941eacf136')
+
+package() {
+  install -D -m 644 "$srcdir/depthlib.h" "$pkgdir/usr/include/depthlib.h"
+  install -D -m 644 "$srcdir/pqueue.h" "$pkgdir/usr/include/pqueue.h"
+  for i in DepthLib depthLib Depthlib
+  do
+    ln -s "depthlib.h" "$pkgdir/usr/include/$i.h"
+  done
+}
+
+# vim:set ts=2 sw=2 et:
