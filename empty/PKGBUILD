@@ -1,0 +1,38 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+pkgname=ru.istu.cs.package.empty
+pkgver=0
+pkgrel=1
+epoch=
+pkgdesc="Empty package for initial repository db file creation."
+arch=('any')
+url="http://mirror.cs.istu.ru"
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=()
+noextract=()
+md5sums=()
+
+build() {
+  true
+}
+
+check() {
+  true
+}
+
+package() {
+  true
+}
+
+# vim:set ts=2 sw=2 et:
