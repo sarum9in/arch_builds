@@ -6,3 +6,4 @@ pm pm_python
 ../xmlrpc-c common
 ../cppzmq common
 ../zeromq ../cppzmq
+../boost.process-svn common
