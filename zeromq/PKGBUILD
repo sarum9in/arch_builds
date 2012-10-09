@@ -1,5 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname=zeromq
+_pkgname=zeromq
+pkgname=$_pkgname-beta
 pkgver=3.1.0
 pkgrel=1
 epoch=
@@ -12,30 +13,30 @@ depends=()
 makedepends=('asciidoc' 'xmlto')
 checkdepends=()
 optdepends=()
-provides=()
-conflicts=()
+provides=('zeromq')
+conflicts=('zeromq')
 replaces=()
 backup=()
 options=()
 install=
 changelog=
-source=("http://download.zeromq.org/$pkgname-$pkgver-beta.tar.gz")
+source=("http://download.zeromq.org/$_pkgname-$pkgver-beta.tar.gz")
 noextract=()
 md5sums=('c9615e4442b325bd0c23a8205e380c40')
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$_pkgname-$pkgver"
   ./configure --prefix=/usr
   make $MAKEFLAGS
 }
 
 check() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$_pkgname-$pkgver"
   make -k check
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$_pkgname-$pkgver"
   make DESTDIR="$pkgdir/" install
 }
 
