@@ -1,35 +1,33 @@
 #!/bin/bash -e
 
-if [[ $EUID != 0 ]]
+source "$(dirname "$0")/lib/root.sh"
+
+package_set="$(basename "$PWD")"
+target="$1" # not essential
+
+run_makepkg()
+{
+    rm -f *.pkg.tar.xz
+    makepkg -os --asroot --noconfirm --syncdeps
+    chown "$user:$group" -R .
+    su "$user" -c 'makepkg -f'
+}
+
+install_main()
+{
+    makepkg -i --asroot --noconfirm
+}
+
+install_dep()
+{
+    pacman -U --asdeps --noconfirm *.pkg.tar.xz
+}
+
+if [[ -f PKGBUILD ]]
 then
-    user="$(id -un)"
-    group="$(id -gn)"
-    exec sudo "$0" "$user" "$group" "$@"
+    run_makepkg
+    install_dep
 else
-    root="$(dirname "$0")/.."
-    package_set="$(basename "$PWD")"
-    user="$1"
-    group="$2"
-    target="$3" # not essential
-
-    run_makepkg()
-    {
-        rm -f *.pkg.tar.xz
-        makepkg -os --asroot --noconfirm
-        chown "$user:$group" -R .
-        su "$user" -c 'makepkg -f'
-    }
-
-    install_main()
-    {
-        makepkg -i --asroot --noconfirm
-    }
-
-    install_dep()
-    {
-        pacman -U --asdeps --noconfirm *.pkg.tar.xz
-    }
-
     for i in `tsort dependencies`
     do
         pushd "$i"
@@ -47,4 +45,3 @@ else
         fi
     done
 fi
-
