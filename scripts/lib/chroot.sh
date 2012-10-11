@@ -4,9 +4,14 @@ source "$(dirname "$0")/lib/config.sh"
 
 chroot="$root/chroot"
 
+chroot_run()
+{
+    mkarchroot -r "$1" "$chroot/${2:-root}"
+}
+
 repo_sync()
 {
-    mkarchroot -r "pacman -Sy" "$chroot/${1:-root}"
+    chroot_run "pacman -Sy" "$@"
 }
 
 new_chroot()
