@@ -4,12 +4,7 @@ source "$(dirname "$0")/lib/root.sh"
 source "$(dirname "$0")/lib/makechrootpkg.sh"
 source "$(dirname "$0")/lib/cdroot.sh"
 
-packages()
-{
-    find . -type f -name '*.pkg.tar.xz'
-}
-
-#packages -delete
+rm -rf "$chroot/$user" "$chroot/$user.lock"
 
 for pkg in '~bunsan/pm' '~yandex-contest/invoker' 'qemu-scripts' #'obnam-bzr'
 do
