@@ -7,3 +7,6 @@ pm pm_python
 ../cppzmq common
 ../zeromq ../cppzmq
 ../boost.process-svn common
+common dcs
+dcs worker
+pm worker
