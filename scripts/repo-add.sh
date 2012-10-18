@@ -26,7 +26,17 @@ do
         popd
     else
         pushd "${pkg}"
-        make_chroot_pkg
+        if [[ -f dependencies ]]
+        then
+            for i in `tsort <dependencies`
+            do
+                pushd "$i"
+                make_chroot_pkg
+                popd
+            done
+        else
+            make_chroot_pkg
+        fi
         popd
     fi
 done
