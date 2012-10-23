@@ -8,7 +8,7 @@ rm -rf "$chroot/$user" "$chroot/$user.lock"
 
 name="mirror.cs.istu.ru"
 
-for pkg in 'bunsan' '~yandex-contest/invoker' 'qemu-scripts' #'obnam-bzr'
+for pkg in 'bunsan' '~yandex-contest/invoker' 'qemu-scripts' 'bacs/legacy/userlibs' #'obnam-bzr'
 do
     if [[ ${pkg:0:1} = '~' ]]
     then
