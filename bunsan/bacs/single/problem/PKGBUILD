@@ -1,13 +1,13 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname='bunsan.bacs.single.problem-git'
-pkgver=20120915
+pkgver=20121024
 pkgrel=1
 pkgdesc="bunsan project common library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_single_problem"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.pm-git' 'yandex.contest.common-git' 'yandex.contest.system-git')
+depends=('bunsan.common-git' 'bunsan.pm-git' 'yandex.contest.common-git' 'yandex.contest.system-git' 'bunsan.bacs.single.api-git')
 makedepends=('git' 'cmake')
 provides=()
 conflicts=()
