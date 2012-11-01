@@ -1,0 +1,10 @@
+[Unit]
+Description=QEMU machine %I
+
+[Service]
+ExecStart=/usr/bin/sudo -u kvm /srv/kvm/%I/run.sh
+Restart=on-success
+After=network.target
+
+[Install]
+WantedBy=multi-user.target

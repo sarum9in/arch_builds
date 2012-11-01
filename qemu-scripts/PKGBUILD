@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=qemu-scripts
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
 epoch=
 pkgdesc="QEMU start scripts"
@@ -8,7 +8,7 @@ arch=('any')
 url=""
 license=('GPL')
 groups=()
-depends=('uml_utilities' 'bridge-utils' 'qemu')
+depends=('uml_utilities' 'bridge-utils' 'qemu' 'sudo')
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -21,7 +21,7 @@ install=qemu-scripts.install
 changelog=
 source=($pkgname-$pkgver.tar.xz)
 noextract=()
-md5sums=('1dbcd85208af8d6a583cf1ac250197ac')
+md5sums=('260a6476511b5b806e2f58be2320b6d4')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
