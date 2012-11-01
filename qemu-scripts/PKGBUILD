@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=qemu-scripts
-pkgver=0.3
+pkgver=0.4
 pkgrel=1
 epoch=
 pkgdesc="QEMU start scripts"
@@ -21,7 +21,7 @@ install=qemu-scripts.install
 changelog=
 source=($pkgname-$pkgver.tar.xz)
 noextract=()
-md5sums=('260a6476511b5b806e2f58be2320b6d4')
+md5sums=('4c6f56fe748e39d6e6a2417db1663a7e')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
