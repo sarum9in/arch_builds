@@ -1,14 +1,14 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname='python-bunsan.pm-git'
-pkgver=20121106
+pkgname='bunsan.network-git'
+pkgver=20121108
 pkgrel=1
-pkgdesc="bunsan pm python wrapper"
+pkgdesc="bunsan project network library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_pm_python"
+url="https://github.com/sarum9in/bunsan_network"
 license=('GPL')
 groups=()
-depends=('python-bunsan.common-git' 'bunsan.pm-git' 'cython')
-makedepends=('git')
+depends=('bunsan.common-git' 'boost-libs' 'zeromq-beta' 'cppzmq-git')
+makedepends=('git' 'cmake')
 provides=()
 conflicts=()
 replaces=()
@@ -19,8 +19,9 @@ source=()
 noextract=()
 md5sums=()
 
-_gitroot="git://github.com/sarum9in/bunsan_pm_python.git"
-_gitname="pm_python"
+#_gitroot="git://cs.istu.ru/bunsan_network.git"
+_gitroot="git://github.com/sarum9in/bunsan_network.git"
+_gitname="network"
 
 build() {
   cd "$srcdir"
@@ -40,17 +41,17 @@ build() {
   git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
   cd "$srcdir/$_gitname-build"
 
-  cd "$srcdir/$_gitname-build"
-  python setup.py build_ext -Lbuild
-  python setup.py build
+  mkdir build && cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  make $MAKEFLAGS
 }
 
 check() {
   cd "$srcdir/$_gitname-build/build"
-  #make test
+  make test
 }
 
 package() {
-  cd "$srcdir/$_gitname-build"
-  python setup.py install --root="$pkgdir/" --optimize=1
+  cd "$srcdir/$_gitname-build/build"
+  make DESTDIR="$pkgdir/" install
 }

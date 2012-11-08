@@ -1,13 +1,13 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname='bunsan.common-git'
-pkgver=20120915
+pkgver=20121108
 pkgrel=1
 pkgdesc="bunsan project common library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_common"
 license=('GPL')
 groups=()
-depends=('xmlrpc-c-svn' 'boost-libs' 'zeromq-beta' 'cppzmq-git' 'boost.process-svn')
+depends=('boost-libs' 'boost.process-svn')
 makedepends=('git' 'cmake')
 provides=()
 conflicts=()
