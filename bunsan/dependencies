@@ -1,5 +1,7 @@
 common network
+common process
 common utility
+process utility
 utility pm
 common common_python
 common_python pm_python
@@ -8,7 +10,7 @@ pm_python worker_python
 ../xmlrpc-c network
 ../cppzmq network
 ../zeromq ../cppzmq
-../boost.process-svn common
+../boost.process-svn process
 network dcs
 common dcs
 dcs worker

@@ -1,13 +1,13 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname='bunsan.common-git'
+pkgname='bunsan.process-git'
 pkgver=20121108
 pkgrel=1
-pkgdesc="bunsan project common library"
+pkgdesc="bunsan project process library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_common"
+url="https://github.com/sarum9in/bunsan_process"
 license=('GPL')
 groups=()
-depends=('boost-libs')
+depends=('bunsan.common-git' 'boost-libs' 'boost.process-svn')
 makedepends=('git' 'cmake')
 provides=()
 conflicts=()
@@ -19,9 +19,9 @@ source=()
 noextract=()
 md5sums=()
 
-#_gitroot="git://cs.istu.ru/bunsan_common.git"
-_gitroot="git://github.com/sarum9in/bunsan_common.git"
-_gitname="common"
+#_gitroot="git://cs.istu.ru/bunsan_process.git"
+_gitroot="git://github.com/sarum9in/bunsan_process.git"
+_gitname="process"
 
 build() {
   cd "$srcdir"
