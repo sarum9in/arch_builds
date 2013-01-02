@@ -1,6 +1,8 @@
 common network
 common process
 common utility
+common web
+^cppcms web
 process utility
 utility pm
 common common_python
