@@ -2,7 +2,7 @@
 pkgname='bunsan.bacs.single.api-git'
 pkgver=20120915
 pkgrel=1
-pkgdesc="bunsan project common library"
+pkgdesc="bacs.single api library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_single_api"
 license=('GPL')

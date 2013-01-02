@@ -2,7 +2,7 @@
 pkgname='bunsan.bacs.single.problem-git'
 pkgver=20121024
 pkgrel=1
-pkgdesc="bunsan project common library"
+pkgdesc="bacs.single problem converter"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_single_problem"
 license=('GPL')
