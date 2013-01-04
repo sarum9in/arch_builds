@@ -1,15 +1,13 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname='bunsan.bacs.archive-git'
+pkgname='bunsan.bacs.problem-git'
 pkgver=20121230
 pkgrel=1
-pkgdesc="bacs archive interface (library + web site)"
+pkgdesc="bacs problem importer library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_archive"
+url="https://github.com/sarum9in/bunsan_bacs_problem"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.process-git' 'bunsan.utility-git'
-         'bunsan.network-git' 'bunsan.web-git' 'bunsan.pm-git'
-         'bunsan.bacs.problem-git')
+depends=('bunsan.common-git' 'bunsan.bacs.single.problem-git')
 makedepends=('git' 'cmake')
 provides=()
 conflicts=()
@@ -21,8 +19,8 @@ source=()
 noextract=()
 md5sums=()
 
-#_gitroot="git://cs.istu.ru/bunsan_bacs_archive.git"
-_gitroot="git://github.com/sarum9in/bunsan_bacs_archive.git"
+#_gitroot="git://cs.istu.ru/bunsan_bacs_problem.git"
+_gitroot="git://github.com/sarum9in/bunsan_bacs_problem.git"
 _gitname="problem"
 
 build() {
