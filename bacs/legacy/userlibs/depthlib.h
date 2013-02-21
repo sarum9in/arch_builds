@@ -89,13 +89,6 @@ void PrintTree( void *q )
     return;
 }
 
-struct ImBAnode2
-{
-    int data;
-    ImBAnode2 *pred;
-    ImBAnode2 *next;
-};
-
 void PrintList2rev( void *q )
 {
     ImBAnode2 *p = (ImBAnode2 *)q;

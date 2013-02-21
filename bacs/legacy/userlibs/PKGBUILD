@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bacs_legacy_userlibs
-pkgver=3
+pkgver=4
 pkgrel=1
 epoch=
 pkgdesc="Library for advanced C++ course"
