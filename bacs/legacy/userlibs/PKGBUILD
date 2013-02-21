@@ -1,7 +1,7 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bacs_legacy_userlibs
-pkgver=2
-pkgrel=2
+pkgver=3
+pkgrel=1
 epoch=
 pkgdesc="Library for advanced C++ course"
 arch=('any')
@@ -21,8 +21,8 @@ install=
 changelog=
 source=('depthlib.h' 'pqueue.h')
 noextract=()
-md5sums=('238ef7d3a8f9da70eed7cd2ee963dcf9'
-         'f339741745f7670873bd70941eacf136')
+md5sums=('a709a840e1026ab29372cfbca285da1b'
+         '20c3614261290b8380f69c55569a2548')
 
 package() {
   install -D -m 644 "$srcdir/depthlib.h" "$pkgdir/usr/include/depthlib.h"
