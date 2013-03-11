@@ -1,5 +1,7 @@
  #!/bin/bash -ex
 
+. /etc/qemu-scripts.conf
+
 on_exit()
 {
     if [[ $pid ]]
@@ -28,7 +30,7 @@ fi
 
 if [[ -z ${qemu[*]} ]]
 then
-    qemu=('qemu-kvm' '-enable-kvm')
+    echo "You have to specify qemu binary!" >&2 && exit 1
 fi
 
 if [[ -z $macaddr ]]

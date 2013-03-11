@@ -1,10 +1,10 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=qemu-scripts
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 epoch=
 pkgdesc="QEMU start scripts"
-arch=('any')
+arch=('i686' 'x86_64')
 url=""
 license=('GPL')
 groups=()
@@ -21,7 +21,12 @@ install=qemu-scripts.install
 changelog=
 source=($pkgname-$pkgver.tar.xz)
 noextract=()
-md5sums=('4c6f56fe748e39d6e6a2417db1663a7e')
+md5sums=('d19e447bb68bea4ac1be0c0518dee2a0')
+
+case $CARCH in
+  i686) _qemu_arch="i386" ;;
+  *) _qemu_arch="$CARCH" ;;
+esac
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -35,6 +40,7 @@ build() {
 package() {
   cd "$srcdir/$pkgname-$pkgver"
   tar cf - . | (cd "$pkgdir" && tar xf -)
+  sed -r "s|^qemu=.*|qemu=('qemu-system-$_qemu_arch' '-enable-kvm')|" -i "$pkgdir/etc/qemu-scripts.conf"
 }
 
 # vim:set ts=2 sw=2 et:
