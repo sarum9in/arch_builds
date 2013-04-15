@@ -21,7 +21,7 @@ install=
 changelog=
 source=('depthlib.h' 'pqueue.h')
 noextract=()
-md5sums=('a709a840e1026ab29372cfbca285da1b'
+md5sums=('95014f8538fbe229ea49df7a074f2dda'
          '20c3614261290b8380f69c55569a2548')
 
 package() {
