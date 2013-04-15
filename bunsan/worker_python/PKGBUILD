@@ -15,46 +15,27 @@ replaces=()
 backup=()
 options=()
 install=
-source=()
+#source=("$pkgname::git://cs.istu.ru/bunsan_worker_python.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_worker_python.git")
 noextract=()
-md5sums=()
-
-#_gitroot="git://cs.istu.ru/bunsan_worker_python.git"
-_gitroot="git://github.com/sarum9in/bunsan_worker_python.git"
-_gitname="worker_python"
+md5sums=('SKIP')
 
 pkgver() {
-  cd $_gitname
+  cd "$srcdir/$pkgname"
   echo $(git rev-list --count master).$(git rev-parse --short master)
 }
 
 build() {
-  cd "$srcdir"
-  msg "Connecting to GIT server...."
-
-  if [ -d $_gitname ] ; then
-    cd $_gitname && git pull origin
-    msg "The local files are updated."
-  else
-    git clone $_gitroot $_gitname
-  fi
-
-  msg "GIT checkout done or server timeout"
-  msg "Starting make..."
-
-  rm -rf "$srcdir/$_gitname-build"
-  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
-  cd "$srcdir/$_gitname-build"
-
+  cd "$srcdir/$pkgname"
   python setup.py build
 }
 
 check() {
-  cd "$srcdir/$_gitname-build/build"
+  cd "$srcdir/$pkgname/build"
   #make test
 }
 
 package() {
-  cd "$srcdir/$_gitname-build"
+  cd "$srcdir/$pkgname"
   python setup.py install --root="$pkgdir/" --optimize=1
 }

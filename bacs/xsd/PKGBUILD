@@ -15,41 +15,22 @@ replaces=()
 backup=()
 options=()
 install=
-source=()
+source=("$pkgname::")
 noextract=()
-md5sums=()
-
-_gitroot=git://cs.istu.ru/bunsan_bacs_xsd.git
-_gitname=bacs_xsd
+md5sums=('SKIP')
 
 pkgver() {
-  cd $_gitname
+  cd "$srcdir/$pkgname"
   echo $(git rev-list --count master).$(git rev-parse --short master)
 }
 
 build() {
-  cd "$srcdir"
-  msg "Connecting to GIT server...."
-
-  if [[ -d "$_gitname" ]]; then
-    cd "$_gitname" && git pull origin
-    msg "The local files are updated."
-  else
-    git clone "$_gitroot" "$_gitname"
-  fi
-
-  msg "GIT checkout done or server timeout"
-  msg "Starting build..."
-
-  rm -rf "$srcdir/$_gitname-build"
-  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
-  cd "$srcdir/$_gitname-build"
-
+  cd "$srcdir/$pkgname"
   ./gen.py
 }
 
 package() {
-  cd "$srcdir/$_gitname-build"
+  cd "$srcdir/$pkgname"
   python2 setup.py install --root="$pkgdir/" --optimize=1
 }
 

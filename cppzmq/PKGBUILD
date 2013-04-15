@@ -15,42 +15,23 @@ replaces=()
 backup=()
 options=()
 install=
-source=()
+source=("$pkgname::git://github.com/zeromq/cppzmq.git")
 noextract=()
-md5sums=()
-
-_gitroot="git://github.com/zeromq/cppzmq.git"
-_gitname="cppzmq"
+md5sums=('SKIP')
 
 pkgver() {
-  cd $_gitname
+  cd "$srcdir/$pkgname"
   echo $(git rev-list --count master).$(git rev-parse --short master)
 }
 
 build() {
-  cd "$srcdir"
-  msg "Connecting to GIT server...."
-
-  if [ -d $_gitname ] ; then
-    cd $_gitname && git pull origin
-    msg "The local files are updated."
-  else
-    git clone $_gitroot $_gitname
-  fi
-
-  msg "GIT checkout done or server timeout"
-  msg "Starting make..."
-
-  rm -rf "$srcdir/$_gitname-build"
-  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
-  cd "$srcdir/$_gitname-build"
-
+  cd "$srcdir/$pkgname"
   #
   # BUILD HERE
   #
 }
 
 package() {
-  cd "$srcdir/$_gitname-build"
+  cd "$srcdir/$pkgname"
   install -D -m 644 "zmq.hpp" "$pkgdir/usr/include/zmq.hpp"
 }
