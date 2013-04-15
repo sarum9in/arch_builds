@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=xmlrpc-c-svn
-pkgver=2312
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="This library provides a modular implementation of XML-RPC for C and C++"
 arch=('i686' 'x86_64')
@@ -15,29 +15,17 @@ replaces=('xmlrpc-c')
 backup=()
 options=('!makeflags' '!libtool')
 install=
-source=()
+source=("$pkgname::svn+http://xmlrpc-c.svn.sourceforge.net/svnroot/xmlrpc-c/advanced")
 noextract=()
-md5sums=()
+md5sums=('SKIP')
 
-_svntrunk=http://xmlrpc-c.svn.sourceforge.net/svnroot/xmlrpc-c/advanced
-_svnmod=xmlrpc-c
+pkgver() {
+  cd "$SRCDEST/$pkgname"
+  svnversion | tr -d [A-z]
+}
 
 build() {
-  cd "$srcdir"
-
-  if [ -d $_svnmod/.svn ]; then
-    (cd $_svnmod && svn up -r $pkgver)
-  else
-    svn co $_svntrunk --config-dir ./ -r $pkgver $_svnmod
-  fi
-
-  msg "SVN checkout done or server timeout"
-  msg "Starting make..."
-
-  rm -rf "$srcdir/$_svnmod-build"
-  cp -r "$srcdir/$_svnmod" "$srcdir/$_svnmod-build"
-  cd "$srcdir/$_svnmod-build"
-
+  cd "$srcdir/$pkgname"
   #./autogen.sh
   #patch -Np0 -i "${srcdir}/callInfo.patch"
   ./configure \
@@ -55,9 +43,9 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$_svnmod-build"
+  cd "$srcdir/$pkgname"
   make DESTDIR="$pkgdir/" install
-  cp "$srcdir/$_svnmod-build/include/xmlrpc-c/"* "$pkgdir/usr/include/xmlrpc-c/"
+  cp "$srcdir/$pkgname/include/xmlrpc-c/"* "$pkgdir/usr/include/xmlrpc-c/"
   mkdir -p "$pkgdir/usr/share"
   #mv "$pkgdir/man" "$pkgdir/usr/share/man"
 }
