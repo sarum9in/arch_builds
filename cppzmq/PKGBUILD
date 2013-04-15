@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=cppzmq-git
-pkgver=20120512
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="This is C++ binding for 0MQ"
 arch=(any)
@@ -21,6 +21,11 @@ md5sums=()
 
 _gitroot="git://github.com/zeromq/cppzmq.git"
 _gitname="cppzmq"
+
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}
 
 build() {
   cd "$srcdir"

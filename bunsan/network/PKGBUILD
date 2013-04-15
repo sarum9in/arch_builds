@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname='bunsan.network-git'
-pkgver=20121108
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan project network library"
 arch=('i686' 'x86_64')
@@ -22,6 +22,11 @@ md5sums=()
 #_gitroot="git://cs.istu.ru/bunsan_network.git"
 _gitroot="git://github.com/sarum9in/bunsan_network.git"
 _gitname="network"
+
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}
 
 build() {
   cd "$srcdir"

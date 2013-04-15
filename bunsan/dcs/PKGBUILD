@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bunsan.dcs-git
-pkgver=20120124
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan dcs"
 arch=('i686' 'x86_64')
@@ -22,6 +22,11 @@ md5sums=()
 #_gitroot="git://cs.istu.ru/bunsan_dcs.git"
 _gitroot="git://github.com/sarum9in/bunsan_dcs.git"
 _gitname="dcs"
+
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}
 
 build() {
   cd "$srcdir"

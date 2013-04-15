@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname=bacs.xsd-git
-pkgver=20120506
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="BACS XSD library"
 arch=('any')
@@ -21,6 +21,11 @@ md5sums=()
 
 _gitroot=git://cs.istu.ru/bunsan_bacs_xsd.git
 _gitname=bacs_xsd
+
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}
 
 build() {
   cd "$srcdir"

@@ -1,6 +1,6 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
 pkgname='bunsan.bacs.archive-git'
-pkgver=20121230
+pkgver=0.0.0
 pkgrel=1
 pkgdesc="bacs archive interface (library + web site)"
 arch=('i686' 'x86_64')
@@ -24,6 +24,11 @@ md5sums=()
 #_gitroot="git://cs.istu.ru/bunsan_bacs_archive.git"
 _gitroot="git://github.com/sarum9in/bunsan_bacs_archive.git"
 _gitname="problem"
+
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}
 
 build() {
   cd "$srcdir"
