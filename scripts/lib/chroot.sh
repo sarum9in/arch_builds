@@ -19,6 +19,7 @@ new_chroot()
     mkdir -p "$chroot"
     mkarchroot "$chroot/root" base base-devel sudo
     sed -ri 's|^CheckSpace|#&|' "$chroot/root/etc/pacman.conf"
+    sed -ri 's|^(SigLevel[[:space:]]*=).*$|\1 Optional|' "$chroot/root/etc/pacman.conf"
     cat >>"$chroot/root/etc/pacman.conf" <<EOF
 [repo]
 Server = file:///repo
