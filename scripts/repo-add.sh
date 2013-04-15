@@ -6,8 +6,6 @@ source "$(dirname "$0")/lib/cdroot.sh"
 
 rm -rf "$chroot/$user" "$chroot/$user.lock"
 
-name="mirror.cs.istu.ru"
-
 build()
 {
     local pkg="$1"
@@ -47,15 +45,21 @@ build()
     fi
 }
 
-for pkg in 'bunsan' '~yandex-contest/invoker' 'bunsan/bacs' 'qemu-scripts' 'bacs/legacy/userlibs' #'obnam-bzr'
+for pkg in \
+    'bunsan' \
+    '~yandex-contest/invoker' \
+    'bunsan/bacs' \
+    'qemu-scripts' \
+    'bacs/legacy/userlibs' \
+    #'obnam-bzr'
 do
     build "$pkg"
 done
 
 pushd "$chroot/$user/repo"
-mv "repo.db.tar.gz" "$name.db.tar.gz"
+mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
 rm -f "repo.db.tar.gz.old"
 rm -f "repo.db"
-ln -sf "$name.db.tar.gz" "$name.db"
-tar cf "$root/$name.tar" .
+ln -sf "${repo_name}.db.tar.gz" "${repo_name}.db"
+tar cf "$root/${repo_name}.tar" .
 popd
