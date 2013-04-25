@@ -1,0 +1,54 @@
+# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+
+case "$CARCH" in
+    x86_64)
+        _arch=x64
+        _md5=bcfa68a27c78251e131ff055b44ba960
+        ;;
+    i686)
+        _arch=i386
+        _md5=8ff0f06292618d282b16d3a73dfab3c6
+        ;;
+    *) echo "Unknown arch $CARCH" >&2 && exit 1 ;;
+esac
+
+pkgname=btsync
+pkgver=0.0.0
+pkgrel=1
+epoch=
+pkgdesc="Automatically sync files via secure, distributed technology."
+arch=('i686' 'x86_64')
+url="http://labs.bittorrent.com/experiments/sync.html"
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("http://btsync.s3-website-us-east-1.amazonaws.com/btsync_$_arch.tar.gz")
+noextract=()
+md5sums=("$_md5")
+
+#build() {
+#	cd "$srcdir/$pkgname-$pkgver"
+#	./configure --prefix=/usr
+#	make
+#}
+
+#check() {
+#	cd "$srcdir/$pkgname-$pkgver"
+#	make -k check
+#}
+
+package() {
+	#cd "$srcdir/$pkgname-$pkgver"
+	#make DESTDIR="$pkgdir/" install
+	install -D -m 0755 "$srcdir/btsync" "$pkgdir/usr/bin/btsync"
+}
