@@ -14,7 +14,7 @@ esac
 
 pkgname=btsync
 pkgver=0.0.0
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="Automatically sync files via secure, distributed technology."
 arch=('i686' 'x86_64')
@@ -32,9 +32,11 @@ backup=()
 options=()
 install=
 changelog=
-source=("http://btsync.s3-website-us-east-1.amazonaws.com/btsync_$_arch.tar.gz")
+source=("http://btsync.s3-website-us-east-1.amazonaws.com/btsync_$_arch.tar.gz"
+        'btsync.service')
 noextract=()
-md5sums=("$_md5")
+md5sums=("$_md5"
+         '0fa9b195953c61ee5bf6a6a13ed3f05a')
 
 #build() {
 #	cd "$srcdir/$pkgname-$pkgver"
@@ -51,4 +53,5 @@ package() {
 	#cd "$srcdir/$pkgname-$pkgver"
 	#make DESTDIR="$pkgdir/" install
 	install -D -m 0755 "$srcdir/btsync" "$pkgdir/usr/bin/btsync"
+	install -D -m 0644 "$srcdir/btsync.service" "$pkgdir/usr/lib/systemd/user/btsync.service"
 }
