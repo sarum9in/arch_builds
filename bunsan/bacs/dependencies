@@ -1,3 +1,4 @@
-single/api single/problem
-single/problem problem
-problem archive
+problem problem_plugins/single
+problem_plugins/single problems
+problems archive
+problems statement_provider

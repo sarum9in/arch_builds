@@ -7,8 +7,9 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_problem"
 license=('GPL')
 groups=()
-depends=('bunsan.pm-git' 'bunsan.bacs.single.problem-git')
-makedepends=('git' 'cmake')
+depends=('protobuf' 'boost-libs'
+         'bunsan.pm-git')
+makedepends=('git' 'cmake' 'boost')
 provides=()
 conflicts=()
 replaces=()

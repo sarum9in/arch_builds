@@ -1,22 +1,25 @@
 # Maintainer: Filippov Aleksey <sarum9in@gmail.com>
-pkgname='bunsan.bacs.single.problem-git'
+pkgname='bunsan.bacs.statemet_provider-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs.single problem converter"
+pkgdesc="bacs statemet_provider interface (library + web site)"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_single_problem"
+url="https://github.com/sarum9in/bunsan_bacs_statement_provider"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.pm-git' 'bunsan.bacs.single.api-git')
-makedepends=('git' 'cmake')
+depends=('protobuf' 'boost-libs'
+         'bunsan.common-git' 'bunsan.process-git' 'bunsan.utility-git'
+         'bunsan.network-git' 'bunsan.web-git' 'bunsan.pm-git'
+         'bunsan.bacs.problems-git')
+makedepends=('git' 'cmake' 'boost')
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_single_problem.git")
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_single_problem.git")
+#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_statement_provider.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_statement_provider.git")
 noextract=()
 md5sums=('SKIP')
 

@@ -7,10 +7,11 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_archive"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.process-git' 'bunsan.utility-git'
+depends=('protobuf' 'boost-libs'
+         'bunsan.common-git' 'bunsan.process-git' 'bunsan.utility-git'
          'bunsan.network-git' 'bunsan.web-git' 'bunsan.pm-git'
-         'bunsan.bacs.problem-git')
-makedepends=('git' 'cmake')
+         'bunsan.bacs.problems-git')
+makedepends=('git' 'cmake' 'boost')
 provides=()
 conflicts=()
 replaces=()
