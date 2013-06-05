@@ -4,7 +4,7 @@ br="${QEMU_BRIDGE:?You have to set up bridge interface}"
 
 echo "Executing qemu-ifup" >&2
 echo "Bringing up $1 for bridged mode..." >&2
-sudo ip link set dev "$1" promisc on
+sudo ip link set dev "$1" up promisc on
 echo "Adding "$1" to ${br}..." >&2
 sudo brctl addif "${br}" "$1"
 sleep 2
