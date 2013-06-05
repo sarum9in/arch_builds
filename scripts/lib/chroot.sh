@@ -18,6 +18,11 @@ new_chroot()
 {
     mkdir -p "$chroot"
     mkarchroot "$chroot/root" base base-devel sudo
+    local mflags="$(sed -rn 's|^MAKEFLAGS=(".*")$|\1|p' /etc/makepkg.conf)"
+    if [[ -n $mflags ]]
+    then
+        sed -ri "s|^.*(MAKEFLAGS=).*$|\1$mflags|" "$chroot/root/etc/makepkg.conf"
+    fi
     sed -ri 's|^CheckSpace|#&|' "$chroot/root/etc/pacman.conf"
     sed -ri 's|^(SigLevel[[:space:]]*=).*$|\1 Optional|' "$chroot/root/etc/pacman.conf"
     cat >>"$chroot/root/etc/pacman.conf" <<EOF
