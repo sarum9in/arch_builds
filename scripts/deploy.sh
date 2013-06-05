@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 source "$(dirname "$0")/lib/root.sh"
-source "$(dirname "$0")/lib/makechrootpkg.sh"
 source "$(dirname "$0")/lib/cdroot.sh"
 
 if [[ -f "$1/${repo_name}.db" ]]
