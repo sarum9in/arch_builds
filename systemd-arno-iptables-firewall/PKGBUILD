@@ -1,4 +1,4 @@
-# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+# Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname=systemd-arno-iptables-firewall
 pkgver=0.2
 pkgrel=1

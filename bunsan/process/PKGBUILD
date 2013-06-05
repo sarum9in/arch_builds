@@ -1,4 +1,4 @@
-# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+# Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname='bunsan.process-git'
 pkgver=0.0.0
 pkgrel=1

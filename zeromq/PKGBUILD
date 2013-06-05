@@ -1,4 +1,4 @@
-# Maintainer: Filippov Aleksey <sarum9in@gmail.com>
+# Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 _pkgname=zeromq
 pkgname=$_pkgname-beta
 pkgver=3.1.0
