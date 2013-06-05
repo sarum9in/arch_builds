@@ -5,7 +5,6 @@ vm="$(echo "$daemon_name" | sed -r 's|^qemu\.(.*)$|\1|')"
 
 . /etc/rc.conf
 . /etc/rc.d/functions
-#. /etc/qemu-scripts.conf
 
 get_pid() {
   #pidof -o %PPID $daemon_name
@@ -21,7 +20,7 @@ case "$1" in
       [[ -f /var/run/$daemon_name.pid ]] &&
         rm -f /var/run/$daemon_name.pid
     # RUN
-    start-stop-daemon --start --chuid kvm:kvm --background --make-pidfile --pidfile /var/run/$daemon_name.pid --exec ~kvm/"$vm/run.sh"
+    start-stop-daemon --start --chuid kvm:kvm --background --make-pidfile --pidfile /var/run/$daemon_name.pid --exec /usr/bin/qemu-scripts-run -m "$vm"
     #$daemon_name
     #
     if [[ $? -gt 0 ]]; then
@@ -42,7 +41,6 @@ case "$1" in
     stat_busy "Stopping $daemon_name daemon"
     #PID=$(get_pid)
     # KILL
-    #start-stop-daemon --stop --oknodo --pidfile /var/run/$daemon_name.pid --exec ~kvm/"$vm/run.sh"
     start-stop-daemon --stop --oknodo --pidfile /var/run/$daemon_name.pid
     #[[ -n $PID ]] && kill $PID &> /dev/null
     #

@@ -3,7 +3,7 @@ Description=QEMU machine %I
 After=network.target
 
 [Service]
-ExecStart=/bin/sh -c 'exec /srv/kvm/%I/run.sh'
+ExecStart=/usr/bin/qemu-scripts-run -m %I
 User=kvm
 Group=kvm
 Restart=on-success

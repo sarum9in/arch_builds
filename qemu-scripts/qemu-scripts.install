@@ -14,17 +14,17 @@ post_install()
     echo ">>>"
     echo ">>> To add new machine you should do"
     echo ">>> cd /etc/rc.d && ln -s qemu qemu.\${MachineName} && sudo -su kvm"
-    echo ">>> cd && mkdir \${MachineName} && cp examples/{config,run}.sh \${MachineName} && vim \${MachineName}/{config,run}.sh"
+    echo ">>> cd && mkdir \${MachineName} && cp examples/config \${MachineName} && vim \${MachineName}/config"
     echo ">>> After that you can use /etc/rc.d/qemu.\${MachineName} as regular init script (rc.d start/stop/restart qemu.\${MachineName}"
+    echo ">>> Or systemctl {} qemu@\${MachineName}.service"
     echo ">>>"
     useradd -r -d /srv/kvm -g kvm kvm
     chown -R kvm:kvm /srv/kvm
-    cmd_ifconfig="$(which ifconfig)"
-    cmd_modprobe="$(which modprobe)"
     cmd_brctl="$(which brctl)"
-    cmd_tunctl="$(which tunctl)"
+    cmd_ip="$(which ip)"
+    cmd_modprobe="$(which modprobe)"
     [[ ! -e $sudoers ]]
-    echo "Cmnd_Alias QEMU=$cmd_ifconfig,$cmd_modprobe,$cmd_brctl,$cmd_tunctl" >>"$sudoers"
+    echo "Cmnd_Alias QEMU=$cmd_brctl,$cmd_ip,$cmd_modprobe" >>"$sudoers"
     echo "%kvm ALL=NOPASSWD: QEMU" >>"$sudoers"
     chmod 440 "$sudoers"
 }
