@@ -1,7 +1,7 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname=qemu-scripts
 pkgver=0.6
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="QEMU start scripts"
 arch=('i686' 'x86_64')
@@ -21,7 +21,7 @@ install=qemu-scripts.install
 changelog=
 source=($pkgname-$pkgver.tar.xz)
 noextract=()
-md5sums=('e1913a1cb5988e1570e2bc24e5a2c8a0')
+md5sums=('1ffa449d8732b57f6cda7a5d38b40ca8')
 
 case $CARCH in
   i686) _qemu_arch="i386" ;;

@@ -1,8 +1,20 @@
 #!/bin/bash -e
 
+sudoers="/etc/sudoers.d/kvm"
+
+post_upgrade()
+{
+    cmd_brctl="$(which brctl)"
+    cmd_ip="$(which ip)"
+    cmd_modprobe="$(which modprobe)"
+    [[ ! -e $sudoers ]]
+    echo "Cmnd_Alias QEMU=$cmd_brctl,$cmd_ip,$cmd_modprobe" >"$sudoers"
+    echo "%kvm ALL=NOPASSWD: QEMU" >>"$sudoers"
+    chmod 440 "$sudoers"
+}
+
 post_install()
 {
-    sudoers="/etc/sudoers.d/kvm"
     echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     echo ">>> READ BEFORE USAGE OF THESE SCRIPTS >>>"
     echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
@@ -20,13 +32,7 @@ post_install()
     echo ">>>"
     useradd -r -d /srv/kvm -g kvm kvm
     chown -R kvm:kvm /srv/kvm
-    cmd_brctl="$(which brctl)"
-    cmd_ip="$(which ip)"
-    cmd_modprobe="$(which modprobe)"
-    [[ ! -e $sudoers ]]
-    echo "Cmnd_Alias QEMU=$cmd_brctl,$cmd_ip,$cmd_modprobe" >>"$sudoers"
-    echo "%kvm ALL=NOPASSWD: QEMU" >>"$sudoers"
-    chmod 440 "$sudoers"
+    post_upgrade
 }
 
 post_remove()
