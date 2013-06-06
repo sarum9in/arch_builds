@@ -26,9 +26,10 @@ pkgver() {
 
 build() {
   cd "$srcdir/$pkgname"
-  #
-  # BUILD HERE
-  #
+  git config user.email "sarum9in@gmail.com"
+  git config user.name "Aleksey Filippov"
+  git checkout 127c255d65322995e61bd664bfd39a720de375ef
+  git revert --no-edit 36722d9031cc833f873ac7b4bcde1049f6e92294
 }
 
 package() {
