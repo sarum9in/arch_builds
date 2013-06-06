@@ -25,8 +25,10 @@ build()
     then
         local tmp="$(mktemp -d)"
         pushd "$tmp"
+        chmod 777 "$tmp"
         yaourt -G "${pkg:1}"
         cd "${pkg:1}"
+        chmod 777 .
         make_chroot_pkg
         popd
         rm -rf "$tmp"
@@ -51,7 +53,7 @@ for pkg in \
     'bunsan/bacs' \
     'qemu-scripts' \
     'bacs/legacy/userlibs' \
-    #'obnam-bzr'
+    'obnam'
 do
     build "$pkg"
 done

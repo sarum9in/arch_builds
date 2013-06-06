@@ -6,12 +6,14 @@ chroot="$root/chroot"
 
 chroot_run()
 {
-    mkarchroot -r "$1" "$chroot/${2:-root}"
+    local chroot_="$chroot/$1"
+    shift
+    arch-nspawn "$chroot_" "$@"
 }
 
 repo_sync()
 {
-    chroot_run "pacman -Sy" "$@"
+    chroot_run "${1:-root}" pacman -Sy
 }
 
 new_chroot()
