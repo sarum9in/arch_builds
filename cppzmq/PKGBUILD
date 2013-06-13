@@ -1,16 +1,16 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname=cppzmq-git
 pkgver=0.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="This is C++ binding for 0MQ"
 arch=(any)
 url="https://github.com/zeromq/cppzmq"
 license=('LGPL')
 groups=()
-depends=('zeromq-beta')
+depends=('zeromq')
 makedepends=('git')
 provides=('cppzmq')
-conflicts=('cppzmq')
+conflicts=('zeromq-beta' 'cppzmq')
 replaces=()
 backup=()
 options=()
@@ -26,13 +26,10 @@ pkgver() {
 
 build() {
   cd "$srcdir/$pkgname"
-  git config user.email "sarum9in@gmail.com"
-  git config user.name "Aleksey Filippov"
-  git checkout 127c255d65322995e61bd664bfd39a720de375ef
-  git revert --no-edit 36722d9031cc833f873ac7b4bcde1049f6e92294
 }
 
 package() {
   cd "$srcdir/$pkgname"
-  install -D -m 644 "zmq.hpp" "$pkgdir/usr/include/zmq.hpp"
+  # this file is provided by community/zeromq
+  #install -D -m 644 "zmq.hpp" "$pkgdir/usr/include/zmq.hpp"
 }
