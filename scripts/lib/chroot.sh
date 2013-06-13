@@ -44,7 +44,7 @@ EOF
 
 update_chroot()
 {
-    mkarchroot -u "$chroot/root"
+    chroot_run root pacman -Suy --noconfirm
 }
 
 make_chroot()
