@@ -1,13 +1,13 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.common-git'
+pkgname='bunsan.cmake-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bunsan project common library"
+pkgdesc="bunsan project cmake library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_common"
+url="https://github.com/sarum9in/bunsan_cmake"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'bunsan.cmake-git') # TODO bunsan.cmake is makedepend
+depends=('cmake')
 makedepends=('git' 'cmake')
 provides=()
 conflicts=()
@@ -15,8 +15,8 @@ replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_common.git")
-source=("$pkgname::git://github.com/sarum9in/bunsan_common.git")
+#source=("$pkgname::git://cs.istu.ru/bunsan_cmake.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_cmake.git")
 noextract=()
 md5sums=('SKIP')
 
@@ -32,10 +32,10 @@ build() {
   make $MAKEFLAGS
 }
 
-check() {
-  cd "$srcdir/$pkgname/build"
-  make test
-}
+#check() {
+#  cd "$srcdir/$pkgname/build"
+#  make test
+#}
 
 package() {
   cd "$srcdir/$pkgname/build"
