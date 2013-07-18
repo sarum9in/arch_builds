@@ -3,18 +3,18 @@
 case "$CARCH" in
     x86_64)
         _arch=x64
-        _md5=bcfa68a27c78251e131ff055b44ba960
+        _md5=0db576be472b0ff9b3947e9b3c0bb0b9
         ;;
     i686)
         _arch=i386
-        _md5=8ff0f06292618d282b16d3a73dfab3c6
+        _md5=fcded5679b5b944aed679db8dd33e08f
         ;;
     *) echo "Unknown arch $CARCH" >&2 && exit 1 ;;
 esac
 
 pkgname=btsync
-pkgver=0.0.0
-pkgrel=2
+pkgver=1.1.42
+pkgrel=1
 epoch=
 pkgdesc="Automatically sync files via secure, distributed technology."
 arch=('i686' 'x86_64')
@@ -32,7 +32,7 @@ backup=()
 options=()
 install=
 changelog=
-source=("http://btsync.s3-website-us-east-1.amazonaws.com/btsync_$_arch.tar.gz"
+source=("http://btsync.s3-website-us-east-1.amazonaws.com/btsync_glibc23_$_arch.tar.gz"
         'btsync.service')
 noextract=()
 md5sums=("$_md5"
