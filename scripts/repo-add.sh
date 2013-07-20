@@ -4,7 +4,10 @@ source "$(dirname "$0")/lib/root.sh"
 source "$(dirname "$0")/lib/makechrootpkg.sh"
 source "$(dirname "$0")/lib/cdroot.sh"
 
-rm -rf "$chroot/$user" "$chroot/$user.lock"
+clean()
+{
+    rm -rf "$chroot/$user" "$chroot/$user.lock"
+}
 
 build()
 {
@@ -46,6 +49,8 @@ build()
         popd
     fi
 }
+
+clean
 
 for pkg in \
     'bunsan' \
