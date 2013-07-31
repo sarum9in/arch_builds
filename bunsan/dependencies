@@ -1,4 +1,5 @@
 cmake common
+cmake testing
 common network
 common process
 common utility
