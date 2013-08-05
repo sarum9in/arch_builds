@@ -5,6 +5,7 @@ common process
 common utility
 common web
 ^cppcms web
+testing process
 process utility
 utility pm
 common common_python
