@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 87850 2013-04-08 09:23:47Z spupykin $
-# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Aleksey Filippov <sarum9in@gmail.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Andrea Zucchelli <zukka77@gmail.com>
 # Contributor: Jonathan Liu <net147@gmail.com>
-# Maintainer: Jon Nordby <jononor@gmail.com>
+# Contributor: Jon Nordby <jononor@gmail.com>
 
 _pkgname=lxc
 pkgname=${_pkgname}0.8
