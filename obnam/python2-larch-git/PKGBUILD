@@ -1,27 +1,27 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=python2-tracing-bzr
+pkgname=python2-larch-git
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="The Python library tracing helps with logging debug messages."
+pkgdesc="Python B-tree library"
 arch=('i686' 'x86_64')
-url="http://liw.fi/tracing/"
+url="http://liw.fi/larch/"
 license=('GPL3')
 groups=()
-depends=('python2')
-makedepends=('bzr')
-provides=('python2-tracing')
-conflicts=('python2-tracing')
-replaces=()
+depends=('python2' 'python2-tracing')
+makedepends=('git')
+provides=('python2-larch')
+conflicts=('python2-larch')
+replaces=('python2-larch-bzr')
 backup=()
 options=()
 install=
-source=("$pkgname::bzr+http://code.liw.fi/python-tracing/bzr/trunk/")
+source=("$pkgname::git://git.liw.fi/larch")
 noextract=()
 md5sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  bzr revno
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
 build() {

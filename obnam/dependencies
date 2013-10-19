@@ -1,5 +1,5 @@
-python2-tracing-bzr python2-larch-bzr
-python2-cliapp-bzr obnam-bzr
-python2-tracing-bzr obnam-bzr
-python2-larch-bzr obnam-bzr
-python2-ttystatus-bzr obnam-bzr
+python2-tracing-git python2-larch-git
+python2-cliapp-git obnam-bzr
+python2-tracing-git obnam-bzr
+python2-larch-git obnam-bzr
+python2-ttystatus-git obnam-bzr
