@@ -14,10 +14,17 @@ add_to_db()
 
 make_chroot_pkg()
 {
-    makechrootpkg -r "$chroot" -- "$@"
+    local oldver="$(. ./PKGBUILD && echo "$pkgver")"
+    local oldrel="$(. ./PKGBUILD && echo "$pkgrel")"
+    sudo -u "$user" -g "$group" makepkg -o
+    sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
+    makechrootpkg -r "$chroot" -- --holdver "$@"
     local pkgname="$(. ./PKGBUILD && echo "$pkgname")"
     local pkgfile="$pkgname"
     local arch=""
+    sed -r "s|^pkgver=.*$|pkgver=${oldver}|" -i PKGBUILD
+    sed -r "s|^pkgrel=.*$|pkgrel=${oldrel}|" -i PKGBUILD
+
     for arch in any i686 x86_64
     do
         local spkgfile="$(. "$chroot/$user/startdir/PKGBUILD" && echo "$pkgname-$(if [[ -n $epoch ]]; then echo "$epoch:"; fi)$pkgver-$pkgrel")-${arch}.pkg.tar.xz"

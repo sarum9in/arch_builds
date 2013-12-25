@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+source "$(dirname "$0")/lib/counter.sh"
 source "$(dirname "$0")/lib/root.sh"
 source "$(dirname "$0")/lib/makechrootpkg.sh"
 source "$(dirname "$0")/lib/cdroot.sh"
@@ -70,3 +71,5 @@ rm -f "repo.db"
 ln -sf "${repo_name}.db.tar.gz" "${repo_name}.db"
 tar cf "$root/${repo_name}.tar" .
 popd
+
+update_reporel
