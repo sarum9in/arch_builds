@@ -1,8 +1,8 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.statemet_provider-git'
+pkgname='bunsan.bacs.statement_provider-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs statemet_provider interface (library + web site)"
+pkgdesc="bacs statement_provider interface (library + web site)"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_statement_provider"
 license=('GPL')
