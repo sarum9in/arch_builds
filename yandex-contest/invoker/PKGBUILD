@@ -1,7 +1,7 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname=yandex.contest.invoker-git
 pkgver=0.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Yandex.Contest.Invoker"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/yandex_contest_invoker"
@@ -12,7 +12,7 @@ makedepends=('git' 'boost' 'bunsan.testing-git')
 provides=()
 conflicts=()
 replaces=()
-backup=()
+backup=('etc/yandex/contest/invoker/lxc.conf')
 options=()
 install=
 source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker.git"
@@ -20,7 +20,7 @@ source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker.git"
         'yandex-contest-invoker.sh')
 noextract=()
 md5sums=('SKIP'
-         '5c9256ac9a3e8cfcd849bad73997c8d7'
+         'e8ee58776e488dc3f613f1183d5f8bac'
          '035bc83489dbed92e8bed93b2915c002')
 
 pkgver() {
