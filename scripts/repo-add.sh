@@ -40,7 +40,7 @@ build()
         pushd "${pkg}"
         if [[ -f dependencies ]]
         then
-            for i in `tsort <dependencies`
+            for i in $(tsort <(egrep -v '^#' dependencies))
             do
                 build "$i"
             done
