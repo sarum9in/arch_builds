@@ -2,6 +2,8 @@
 
 source "$(dirname "$0")/lib/config.sh"
 
+vcs=(bzr git mercurial svn)
+
 chroot="$root/chroot"
 
 chroot_run()
@@ -19,7 +21,7 @@ repo_sync()
 new_chroot()
 {
     mkdir -p "$chroot"
-    mkarchroot "$chroot/root" base base-devel sudo
+    mkarchroot "$chroot/root" base base-devel sudo "${vcs[@]}"
     local mflags="$(sed -rn 's|^MAKEFLAGS=(".*")$|\1|p' /etc/makepkg.conf)"
     if [[ -n $mflags ]]
     then
