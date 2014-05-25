@@ -2,6 +2,8 @@
 
 source "$(dirname "$0")/lib/chroot.sh"
 
+export LC_ALL=C
+
 add_to_db()
 {
     local pkgfile="$1"
