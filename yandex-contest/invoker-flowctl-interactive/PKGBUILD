@@ -1,0 +1,42 @@
+# Maintainer: Aleksey Filippov <sarum9in@gmail.com>
+pkgname=yandex.contest.invoker.flowctl.interactive-git
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="Yandex.Contest.FlowCtl interactive helper"
+arch=('i686' 'x86_64')
+url="https://github.com/sarum9in/yandex_contest_invoker_flowctl_interactive"
+license=('GPL')
+groups=()
+depends=('boost-libs' 'yandex.contest.invoker-git')
+makedepends=('git' 'boost')
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker_flowctl_interactive.git")
+noextract=()
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/$pkgname"
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+build() {
+  cd "$srcdir/$pkgname"
+  mkdir build && cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  make $MAKEFLAGS
+}
+
+check() {
+  cd "$srcdir/$pkgname/build"
+  #make test
+}
+
+package() {
+  cd "$srcdir/$pkgname/build"
+  make DESTDIR="$pkgdir/" install
+}
