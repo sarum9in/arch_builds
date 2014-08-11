@@ -20,7 +20,7 @@ source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker.git"
         'yandex-contest-invoker.sh')
 noextract=()
 md5sums=('SKIP'
-         'e8ee58776e488dc3f613f1183d5f8bac'
+         '3761aeff09504f8d68492fa717cda9b0'
          '035bc83489dbed92e8bed93b2915c002')
 
 pkgver() {
