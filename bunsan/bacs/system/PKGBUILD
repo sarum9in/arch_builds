@@ -1,13 +1,14 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname='bunsan.bacs.system-git'
-pkgver=4.32617f7
-pkgrel=1029
+pkgver=0.0.0
+pkgrel=1
 pkgdesc="bacs system library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_system"
 license=('GPL')
 groups=()
 depends=('protobuf' 'boost-libs'
+         'python2' 'python' 'gcc' 'mono' 'fpc' 'java-environment'
          'bunsan.bacs.common-git')
 makedepends=('git' 'cmake' 'boost')
 provides=()
