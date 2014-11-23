@@ -29,10 +29,7 @@ new_chroot()
     fi
     sed -ri 's|^CheckSpace|#&|' "$chroot/root/etc/pacman.conf"
     sed -ri 's|^(SigLevel[[:space:]]*=).*$|\1 Optional|' "$chroot/root/etc/pacman.conf"
-    cat >>"$chroot/root/etc/pacman.conf" <<EOF
-[repo]
-Server = file:///repo
-EOF
+    sed -ri 's|^.*REPOSITORIES.*$|&\n[repo]\nServer = file:///repo\n|' "$chroot/root/etc/pacman.conf"
     mkdir -p "$chroot/root/repo"
     pushd "$root/empty"
     rm -f *.pkg.tar.xz
