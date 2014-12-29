@@ -33,7 +33,7 @@ new_chroot()
     mkdir -p "$chroot/root/repo"
     pushd "$root/empty"
     rm -f *.pkg.tar.xz
-    makepkg --asroot -f
+    sudo -u "$user" -g "$group" makepkg -f
     local pkgname="$(ls *.pkg.tar.xz)"
     cp -f "$pkgname" "$chroot/root/repo"
     popd
