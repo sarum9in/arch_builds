@@ -18,7 +18,7 @@ raw_make_chroot_pkg()
 {
     local oldver="$(. ./PKGBUILD && echo "$pkgver")"
     local oldrel="$(. ./PKGBUILD && echo "$pkgrel")"
-    sudo -u "$user" -g "$group" makepkg -o
+    sudo -u "$user" -g "$group" makepkg --nobuild --nodeps
     sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
     makechrootpkg -r "$chroot" -- --holdver "$@"
     sed -r "s|^pkgver=.*$|pkgver=${oldver}|" -i PKGBUILD
