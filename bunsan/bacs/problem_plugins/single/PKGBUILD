@@ -7,8 +7,12 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_problem_single"
 license=('GPL')
 groups=()
-depends=('protobuf' 'boost-libs'
-         'bunsan.common-git' 'bunsan.pm-git' 'bunsan.bacs.problem-git')
+depends=(
+    'bunsan.pm-git'
+    'bunsan.protobuf-git'
+    'bunsan.bacs.problem-git'
+    'libmariadbclient'
+)
 makedepends=('git' 'cmake' 'boost')
 provides=()
 conflicts=()
@@ -16,8 +20,7 @@ replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_problem_single.git")
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_problem_single.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_problem_single.git#branch=legacy0")
 noextract=()
 md5sums=('SKIP')
 

@@ -2,22 +2,33 @@
 pkgname='bunsan.bacs.system-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs system library"
+pkgdesc="BACS system library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_system"
 license=('GPL')
 groups=()
-depends=('protobuf' 'boost-libs'
-         'python2' 'python' 'gcc' 'mono' 'fpc' 'java-environment'
-         'bunsan.bacs.common-git')
-makedepends=('git' 'cmake' 'boost')
+depends=(
+  'bunsan.protobuf-git'
+  'bunsan.bacs.common-git'
+
+  'python2'
+  'python'
+  'gcc'
+  'mono'
+  'fpc'
+  'java-environment'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_system.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_system.git")
 noextract=()
 md5sums=('SKIP')

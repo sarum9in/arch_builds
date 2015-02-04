@@ -2,12 +2,16 @@
 pkgname='python-bunsan.pm-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bunsan pm python wrapper"
+pkgdesc="bunsan pm python bindings"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_pm_python"
 license=('GPL')
 groups=()
-depends=('python-bunsan.common-git' 'bunsan.pm-git' 'cython')
+depends=(
+  'python-bunsan.common-git'
+  'bunsan.pm-git'
+  'cython'
+)
 makedepends=('git')
 provides=()
 conflicts=()

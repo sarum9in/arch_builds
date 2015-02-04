@@ -2,22 +2,27 @@
 pkgname='bunsan.bacs.problem-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs problem importer library"
+pkgdesc="BACS problem importer library"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_problem"
 license=('GPL')
 groups=()
-depends=('protobuf' 'boost-libs'
-         'bunsan.bacs.common-git'
-         'bunsan.pm-git')
-makedepends=('git' 'cmake' 'boost')
+depends=(
+  'bunsan.pm-git'
+  'bunsan.protobuf-git'
+  'bunsan.bacs.common-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_problem.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_problem.git")
 noextract=()
 md5sums=('SKIP')

@@ -7,16 +7,23 @@ arch=('i686' 'x86_64')
 url=""
 license=('GPL')
 groups=()
-depends=('boost-libs' 'lua')
-makedepends=('git' 'cmake')
+depends=(
+  'bunsan.common-git'
+  'lua'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://github.com/sarum9in/bunsan_lua.git")
 source=("$pkgname::git://cs.istu.ru/bunsan_lua.git")
+#source=("$pkgname::git://github.com/sarum9in/bunsan_lua.git")
 noextract=()
 md5sums=('SKIP')
 

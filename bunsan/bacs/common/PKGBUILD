@@ -2,20 +2,29 @@
 pkgname='bunsan.bacs.common-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs commons"
+pkgdesc="BACS commons"
 arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_bacs_common"
 license=('GPL')
 groups=()
-depends=('protobuf' 'boost-libs')
-makedepends=('git' 'cmake' 'boost')
+depends=(
+  'bunsan.common-git'
+  'bunsan.process-git'
+  'bunsan.utility-git'
+  'bunsan.curl-git'
+  'bunsan.protobuf-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_bacs_common.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_common.git")
 noextract=()
 md5sums=('SKIP')

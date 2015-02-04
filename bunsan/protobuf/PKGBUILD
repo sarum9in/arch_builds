@@ -1,21 +1,29 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=bunsan.compatibility-git
+pkgname='bunsan.protobuf-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bunsan project compatibility library"
+pkgdesc="bunsan project protobuf library"
 arch=('i686' 'x86_64')
-url=""
+url="https://github.com/sarum9in/bunsan_protobuf"
 license=('GPL')
 groups=()
-depends=('xmlrpc-c' 'boost-libs' 'zeromq')
-makedepends=('git' 'cmake')
+depends=(
+  'bunsan.common-git'
+  'protobuf'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.testing-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::/home/lex/istu/dev/bunsan/compatibility/.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_protobuf.git")
 noextract=()
 md5sums=('SKIP')
 
@@ -27,14 +35,14 @@ pkgver() {
 build() {
   cd "$srcdir/$pkgname"
   mkdir build && cd build
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
   make $MAKEFLAGS
 }
 
-#check() {
-#  cd "$srcdir/$pkgname/build"
-#  make test
-#}
+check() {
+  cd "$srcdir/$pkgname/build"
+  make test
+}
 
 package() {
   cd "$srcdir/$pkgname/build"

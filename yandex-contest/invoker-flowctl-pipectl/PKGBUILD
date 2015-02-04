@@ -7,8 +7,15 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/yandex_contest_invoker_flowctl_pipectl"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'yandex.contest.invoker-git')
-makedepends=('git' 'boost')
+depends=(
+  'yandex.contest.invoker-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.testing-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()

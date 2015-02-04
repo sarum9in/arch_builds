@@ -4,6 +4,8 @@ common network
 common process
 common utility
 common web
+common curl
+common protobuf
 ^cppcms web
 testing process
 process utility
@@ -13,9 +15,8 @@ common_python pm_python
 pm pm_python
 pm_python worker_python
 ../xmlrpc-c network
-../cppzmq network
 network dcs
 common dcs
-dcs worker
-network worker
-pm worker
+#dcs worker
+#network worker
+#pm worker

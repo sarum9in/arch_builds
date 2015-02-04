@@ -7,15 +7,20 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_web"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'boost-libs' 'cppcms')
-makedepends=('git' 'cmake')
+depends=(
+  'bunsan.common-git'
+  'cppcms'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_web.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_web.git")
 noextract=()
 md5sums=('SKIP')

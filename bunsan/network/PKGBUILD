@@ -7,15 +7,22 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_network"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'boost-libs' 'zeromq' 'xmlrpc-c-svn')
-makedepends=('git' 'cmake' 'boost')
+depends=(
+  'bunsan.common-git'
+  'zeromq'
+  'xmlrpc-c-svn'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_network.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_network.git")
 noextract=()
 md5sums=('SKIP')

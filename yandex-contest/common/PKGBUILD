@@ -7,8 +7,15 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/yandex_contest_common"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'bunsan.common-git')
-makedepends=('git' 'cmake' 'boost' 'bunsan.testing-git')
+depends=(
+  'bunsan.common-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.testing-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()

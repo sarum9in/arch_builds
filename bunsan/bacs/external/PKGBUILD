@@ -1,19 +1,15 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.statement_provider-git'
+pkgname='bunsan.bacs.external-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS statement_provider interface (library + web site)"
+pkgdesc="BACS external API"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_statement_provider"
+url="https://github.com/sarum9in/bunsan_bacs_external"
 license=('GPL')
 groups=()
 depends=(
-  'bunsan.utility-git'
-  'bunsan.network-git'
-  'bunsan.web-git'
-  'bunsan.pm-git'
+  'bunsan.common-git'
   'bunsan.protobuf-git'
-  'bunsan.bacs.problems-git'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -26,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_statement_provider.git")
+source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_external.git")
 noextract=()
 md5sums=('SKIP')
 
@@ -44,7 +40,7 @@ build() {
 
 check() {
   cd "$srcdir/$pkgname/build"
-  make test
+  #make test
 }
 
 package() {

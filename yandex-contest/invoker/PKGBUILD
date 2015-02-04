@@ -7,8 +7,16 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/yandex_contest_invoker"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'yandex.contest.common-git' 'yandex.contest.system-git')
-makedepends=('git' 'boost' 'bunsan.testing-git')
+depends=(
+  'yandex.contest.common-git'
+  'yandex.contest.system-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.testing-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
@@ -31,7 +39,7 @@ pkgver() {
 build() {
   cd "$srcdir/$pkgname"
   mkdir build && cd build
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release #-DENABLE_TESTS=no
   make $MAKEFLAGS
 }
 

@@ -7,15 +7,21 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_utility"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.process-git' 'boost-libs')
-makedepends=('git' 'cmake')
+depends=(
+  'bunsan.common-git'
+  'bunsan.process-git'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_utility.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_utility.git")
 noextract=()
 md5sums=('SKIP')

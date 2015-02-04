@@ -7,15 +7,18 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_testing"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'bunsan.cmake-git') # TODO bunsan.cmake is makedepend
-makedepends=('git' 'cmake' 'boost')
+depends=('boost-libs')
+makedepends=(
+  'bunsan.cmake-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
 backup=()
 options=()
 install=
-#source=("$pkgname::git://cs.istu.ru/bunsan_testing.git")
 source=("$pkgname::git://github.com/sarum9in/bunsan_testing.git")
 noextract=()
 md5sums=('SKIP')

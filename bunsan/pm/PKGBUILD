@@ -7,8 +7,17 @@ arch=('i686' 'x86_64')
 url="https://github.com/sarum9in/bunsan_pm"
 license=('GPL')
 groups=()
-depends=('bunsan.common-git' 'bunsan.utility-git' 'crypto++')
-makedepends=('git' 'cmake')
+depends=(
+  'bunsan.common-git'
+  'bunsan.utility-git'
+  'crypto++'
+)
+makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.testing-git'
+  'git'
+  'boost'
+)
 provides=()
 conflicts=()
 replaces=()
