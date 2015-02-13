@@ -5,5 +5,4 @@ system invoker
 #invoker invoker-compat-common
 #invoker-compat-common invoker-compat-jni
 invoker invoker-flowctl-pipectl
-#invoker invoker-flowctl-game
 invoker invoker-flowctl-interactive
