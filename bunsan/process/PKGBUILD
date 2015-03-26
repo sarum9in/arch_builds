@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan project process library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_process"
+url="https://github.com/bunsanorg/process"
 license=('GPL')
 groups=()
 depends=(
@@ -21,7 +21,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_process.git")
+source=("$pkgname::git://github.com/bunsanorg/process.git")
 noextract=()
 md5sums=('SKIP')
 

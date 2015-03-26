@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan dcs"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_dcs"
+url="https://github.com/bunsanorg/dcs"
 license=('GPL')
 groups=()
 depends=(
@@ -22,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_dcs.git")
+source=("$pkgname::git://github.com/bunsanorg/dcs.git")
 noextract=()
 md5sums=('SKIP')
 

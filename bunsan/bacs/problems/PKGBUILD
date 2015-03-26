@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="BACS common problem plugins"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_problem"
+url="https://github.com/bunsanorg/bacs_problem"
 license=('GPL')
 groups=()
 depends=(
@@ -22,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_problems.git")
+source=("$pkgname::git://github.com/bunsanorg/bacs_problems.git")
 noextract=()
 md5sums=('SKIP')
 

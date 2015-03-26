@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan root python package"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_common_python"
+url="https://github.com/bunsanorg/common_python"
 license=('GPL')
 groups=()
 depends=(
@@ -21,7 +21,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_common_python.git")
+source=("$pkgname::git://github.com/bunsanorg/common_python.git")
 noextract=()
 md5sums=('SKIP')
 

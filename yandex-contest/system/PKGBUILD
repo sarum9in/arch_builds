@@ -4,12 +4,12 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="Yandex.Contest system utilities"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/yandex_contest_system"
+url="https://github.com/bunsanorg/yandex_contest_system"
 license=('GPL')
 groups=()
 depends=(
   'yandex.contest.common-git'
-  'lxc0.8'
+  'lxc'
   'pkgconfig'
 )
 makedepends=(
@@ -24,7 +24,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/yandex_contest_system.git")
+source=("$pkgname::git://github.com/bunsanorg/yandex_contest_system.git")
 noextract=()
 md5sums=('SKIP')
 

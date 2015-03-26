@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bacs/problem/single plugin"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_problem_single"
+url="https://github.com/bunsanorg/bacs_problem_single"
 license=('GPL')
 groups=()
 depends=(
@@ -20,7 +20,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_problem_single.git#branch=legacy0")
+source=("$pkgname::git://github.com/bunsanorg/bacs_problem_single.git#branch=legacy0")
 noextract=()
 md5sums=('SKIP')
 

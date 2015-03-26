@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan project testing library"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_testing"
+url="https://github.com/bunsanorg/testing"
 license=('GPL')
 groups=()
 depends=('boost-libs')
@@ -19,7 +19,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_testing.git")
+source=("$pkgname::git://github.com/bunsanorg/testing.git")
 noextract=()
 md5sums=('SKIP')
 

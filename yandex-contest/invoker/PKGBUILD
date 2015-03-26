@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=2
 pkgdesc="Yandex.Contest.Invoker"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/yandex_contest_invoker"
+url="https://github.com/bunsanorg/yandex_contest_invoker"
 license=('GPL')
 groups=()
 depends=(
@@ -23,7 +23,7 @@ replaces=()
 backup=('etc/yandex/contest/invoker/lxc.conf')
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker.git"
+source=("$pkgname::git://github.com/bunsanorg/yandex_contest_invoker.git"
         'lxc.conf'
         'yandex-contest-invoker.sh')
 noextract=()

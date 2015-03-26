@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan pm python bindings"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_pm_python"
+url="https://github.com/bunsanorg/pm_python"
 license=('GPL')
 groups=()
 depends=(
@@ -19,7 +19,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_pm_python.git")
+source=("$pkgname::git://github.com/bunsanorg/pm_python.git")
 noextract=()
 md5sums=('SKIP')
 

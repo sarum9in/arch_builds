@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan project cURL bindings"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_curl"
+url="https://github.com/bunsanorg/curl"
 license=('GPL')
 groups=()
 depends=(
@@ -23,7 +23,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_curl.git")
+source=("$pkgname::git://github.com/bunsanorg/curl.git")
 noextract=()
 md5sums=('SKIP')
 

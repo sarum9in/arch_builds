@@ -15,8 +15,3 @@ common_python pm_python
 pm pm_python
 pm_python worker_python
 ../xmlrpc-c network
-network dcs
-common dcs
-#dcs worker
-#network worker
-#pm worker

@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="BACS Archive interface (library + web site)"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_bacs_archive"
+url="https://github.com/bunsanorg/bacs_archive"
 license=('GPL')
 groups=()
 depends=(
@@ -27,7 +27,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_bacs_archive.git")
+source=("$pkgname::git://github.com/bunsanorg/bacs_archive.git")
 noextract=()
 md5sums=('SKIP')
 

@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="Yandex.Contest.FlowCtl pipectl helper"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/yandex_contest_invoker_flowctl_pipectl"
+url="https://github.com/bunsanorg/yandex_contest_invoker_flowctl_pipectl"
 license=('GPL')
 groups=()
 depends=(
@@ -22,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/yandex_contest_invoker_flowctl_pipectl.git")
+source=("$pkgname::git://github.com/bunsanorg/yandex_contest_invoker_flowctl_pipectl.git")
 noextract=()
 md5sums=('SKIP')
 

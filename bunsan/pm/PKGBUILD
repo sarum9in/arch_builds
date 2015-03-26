@@ -4,7 +4,7 @@ pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan pm"
 arch=('i686' 'x86_64')
-url="https://github.com/sarum9in/bunsan_pm"
+url="https://github.com/bunsanorg/pm"
 license=('GPL')
 groups=()
 depends=(
@@ -24,7 +24,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/sarum9in/bunsan_pm.git")
+source=("$pkgname::git://github.com/bunsanorg/pm.git")
 noextract=()
 md5sums=('SKIP')
 
