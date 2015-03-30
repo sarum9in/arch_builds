@@ -28,7 +28,7 @@ source=("$pkgname::git://github.com/bunsanorg/yandex_contest_invoker.git"
         'yandex-contest-invoker.sh')
 noextract=()
 md5sums=('SKIP'
-         '3761aeff09504f8d68492fa717cda9b0'
+         '507ba40e9c1ce96192be04768bc3d732'
          '035bc83489dbed92e8bed93b2915c002')
 
 pkgver() {
