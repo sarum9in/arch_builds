@@ -54,8 +54,12 @@ build()
 clean
 
 for pkg in \
+    'protobuf-cpp' \
+    'grpc' \
+    'czmq' \
+    'czmqpp-git' \
     'bunsan' \
-    '~yandex-contest/invoker' \
+    'yandex-contest' \
     'bunsan/bacs' \
     'qemu-scripts' \
     'bacs/legacy/userlibs' \
