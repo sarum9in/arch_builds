@@ -53,20 +53,17 @@ build()
 
 clean
 
-for pkg in \
-    'protobuf-cpp' \
-    'grpc' \
-    'czmq' \
-    'czmqpp-git' \
-    'bunsan' \
-    'yandex-contest' \
-    'bunsan/bacs' \
-    'qemu-scripts' \
-    'bacs/legacy/userlibs' \
-    'obnam'
-do
-    build "$pkg"
-done
+build boost
+build protobuf3
+build grpc
+build czmq
+build czmqpp-git
+build bunsan
+build yandex-contest
+build bunsan/bacs
+build qemu-scripts
+build bacs/legacy/userlibs
+build obnam
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"

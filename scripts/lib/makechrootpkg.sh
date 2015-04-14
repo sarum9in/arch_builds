@@ -25,6 +25,17 @@ raw_make_chroot_pkg()
     sed -r "s|^pkgrel=.*$|pkgrel=${oldrel}|" -i PKGBUILD
 }
 
+pkg_name_version()
+(
+    . "$1"
+    echo -n "$cpkgname-"
+    if [[ -n $epoch ]]
+    then
+        echo -n "$epoch:"
+    fi
+    echo "$pkgver-$pkgrel"
+)
+
 make_chroot_pkg()
 {
     raw_make_chroot_pkg "$@"
@@ -36,12 +47,14 @@ make_chroot_pkg()
 
         for arch in any i686 x86_64
         do
-            local spkgfile="$(. "$chroot/$user/startdir/PKGBUILD" && echo "$cpkgname-$(if [[ -n $epoch ]]; then echo "$epoch:"; fi)$pkgver-$pkgrel")-${arch}.pkg.tar.xz"
-            echo "$spkgfile"
+            local spkgfile="$(pkg_name_version "$chroot/$user/startdir/PKGBUILD")-${arch}.pkg.tar.xz"
             if [[ -f $spkgfile ]]
             then
                 pkgfile="$(readlink -f "$spkgfile")"
+                echo "$spkgfile exists as $pkgfile"
                 break
+            else
+                echo "$spkgfile does not exist, retrying..."
             fi
         done
         add_to_db "$pkgfile"
