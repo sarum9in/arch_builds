@@ -9,7 +9,7 @@ license=('GPL')
 groups=()
 depends=(
   'bunsan.common-git'
-  'protobuf'
+  'protobuf3'
 )
 makedepends=(
   'bunsan.cmake-git'
