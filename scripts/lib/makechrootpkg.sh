@@ -9,9 +9,10 @@ add_to_db()
     local pkgfile="$1"
     mkdir -p "$chroot/$user/repo"
     pushd "$chroot/$user/repo" >/dev/null
-    cp "$pkgfile" .
+    cp -v "$pkgfile" .
     repo-add repo.db.tar.gz "${pkgfile##*/}"
     popd >/dev/null
+    repo_sync "$user"
 }
 
 raw_make_chroot_pkg()
@@ -50,7 +51,7 @@ make_chroot_pkg()
             local spkgfile="$(pkg_name_version "$chroot/$user/startdir/PKGBUILD")-${arch}.pkg.tar.xz"
             if [[ -f $spkgfile ]]
             then
-                pkgfile="$(readlink -f "$spkgfile")"
+                local pkgfile="$(readlink -f "$spkgfile")"
                 echo "$spkgfile exists as $pkgfile"
                 break
             else
@@ -58,11 +59,10 @@ make_chroot_pkg()
             fi
         done
         add_to_db "$pkgfile"
-
-        repo_sync "$user"
         failed=0
         while ! chroot_run "$user" pacman --noconfirm -Sw "$cpkgname"
         do
+            add_to_db "$pkgfile"
             failed=$((failed + 1))
             if (( failed >= 10 ))
             then
