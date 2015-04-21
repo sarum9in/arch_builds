@@ -55,6 +55,7 @@ clean
 
 build boost
 build protobuf3
+build python-pika
 build grpc
 build czmq
 build czmqpp-git
