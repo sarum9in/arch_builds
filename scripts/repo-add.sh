@@ -65,6 +65,7 @@ build bunsan/bacs
 build qemu-scripts
 build bacs/legacy/userlibs
 build obnam
+build ^rabbitmq
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"

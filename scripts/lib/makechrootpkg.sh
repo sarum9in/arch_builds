@@ -4,6 +4,8 @@ source "$(dirname "$0")/lib/chroot.sh"
 
 export LC_ALL=C
 
+readonly makechrootpkg="$bindir/makechrootpkg"
+
 add_to_db()
 {
     local pkgfile="$1"
@@ -15,13 +17,21 @@ add_to_db()
     repo_sync "$user"
 }
 
+patch_makechrootpkg()
+{
+    mkdir -p "$root/scripts/bin"
+    sed -r 's|--verifysource|& --skippgpcheck|' "$(which makechrootpkg)" >"$makechrootpkg"
+    chmod +x "$makechrootpkg"
+}
+
 raw_make_chroot_pkg()
 {
+    patch_makechrootpkg
     local oldver="$(. ./PKGBUILD && echo "$pkgver")"
     local oldrel="$(. ./PKGBUILD && echo "$pkgrel")"
-    sudo -u "$user" -g "$group" makepkg --nobuild --nodeps
+    sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
     sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
-    makechrootpkg -r "$chroot" -- --holdver "$@"
+    "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
     sed -r "s|^pkgver=.*$|pkgver=${oldver}|" -i PKGBUILD
     sed -r "s|^pkgrel=.*$|pkgrel=${oldrel}|" -i PKGBUILD
 }
