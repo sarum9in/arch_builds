@@ -9,8 +9,8 @@ license=('GPL')
 groups=()
 depends=(
   'bunsan.common-git'
+  'xmlrpc-c'
   'zeromq'
-  'xmlrpc-c-svn'
 )
 makedepends=(
   'bunsan.cmake-git'
