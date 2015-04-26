@@ -56,6 +56,7 @@ clean
 build boost
 build protobuf3
 build python-pika
+build ^python-pika-git
 build grpc
 build czmq
 build czmqpp-git
@@ -66,6 +67,7 @@ build qemu-scripts
 build bacs/legacy/userlibs
 build obnam
 build ^rabbitmq
+build ^rabbitmqadmin
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
