@@ -1,5 +1,6 @@
 /chroot
 /scripts/bin/makechrootpkg
+/scripts/etc/config.sh
 
 src
 pkg
@@ -11,6 +12,10 @@ pkg
 
 /mirror.cs.istu.ru.tar
 
+/bacs/legacy/web/ads/
+/bacs/legacy/web/bacs.web.legacy-git/
+/bacs/legacy/web/contrib/
+/bacs/legacy/web/PHPMailer/
 /bunsan/bacs/archive/bunsan.bacs.archive-git/
 /bunsan/bacs/common/bunsan.bacs.common-git/
 /bunsan/bacs/external/bunsan.bacs.external-git/

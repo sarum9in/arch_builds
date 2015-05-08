@@ -27,6 +27,7 @@ patch_makechrootpkg()
 raw_make_chroot_pkg()
 {
     patch_makechrootpkg
+    sed -r "s|^_github_token=.*$|_github_token=${github_token}|" -i PKGBUILD || true
     local oldver="$(. ./PKGBUILD && echo "$pkgver")"
     local oldrel="$(. ./PKGBUILD && echo "$pkgrel")"
     sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
@@ -34,6 +35,7 @@ raw_make_chroot_pkg()
     "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
     sed -r "s|^pkgver=.*$|pkgver=${oldver}|" -i PKGBUILD
     sed -r "s|^pkgrel=.*$|pkgrel=${oldrel}|" -i PKGBUILD
+    sed -r "s|^_github_token=.*$|_github_token=|" -i PKGBUILD || true
 }
 
 pkg_name_version()

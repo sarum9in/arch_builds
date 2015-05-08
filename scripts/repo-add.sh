@@ -53,7 +53,6 @@ build()
 
 clean
 
-build boost
 build protobuf3
 build python-pika
 build ^python-pika-git
@@ -65,6 +64,7 @@ build yandex-contest
 build bunsan/bacs
 build qemu-scripts
 build bacs/legacy/userlibs
+build bacs/legacy/web
 build obnam
 build ^rabbitmq
 build ^rabbitmqadmin
