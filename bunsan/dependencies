@@ -1,6 +1,6 @@
 cmake common
 cmake testing
-common network
+common crypto
 common process
 common utility
 common web

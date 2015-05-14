@@ -1,19 +1,19 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.network-git'
+pkgname='bunsan.crypto-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bunsan project network library"
+pkgdesc="bunsan crypto"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/network"
+url="https://github.com/bunsanorg/crypto"
 license=('GPL')
 groups=()
 depends=(
   'bunsan.common-git'
-  'xmlrpc-c'
-  'zeromq'
+  'crypto++'
 )
 makedepends=(
   'bunsan.cmake-git'
+  'bunsan.testing-git'
   'git'
   'boost'
 )
@@ -23,7 +23,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/network.git")
+source=("$pkgname::git://github.com/bunsanorg/crypto.git")
 noextract=()
 md5sums=('SKIP')
 
