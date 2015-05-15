@@ -28,9 +28,9 @@ pkg
 /bunsan/cmake/bunsan.cmake-git/
 /bunsan/common/bunsan.common-git/
 /bunsan/common_python/python-bunsan.common-git/
+/bunsan/crypto/bunsan.crypto-git/
 /bunsan/curl/bunsan.curl-git/
 /bunsan/dcs/bunsan.dcs-git/
-/bunsan/network/bunsan.network-git/
 /bunsan/pm/bunsan.pm-git/
 /bunsan/pm_python/python-bunsan.pm-git/
 /bunsan/process/bunsan.process-git/
