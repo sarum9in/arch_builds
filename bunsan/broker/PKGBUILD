@@ -44,10 +44,10 @@ build() {
   make $MAKEFLAGS
 }
 
-#check() {
-#  cd "$srcdir/$pkgname/build"
-#  make test
-#}
+check() {
+  cd "$srcdir/$pkgname/build"
+  make test
+}
 
 package() {
   cd "$srcdir/$pkgname/build"
