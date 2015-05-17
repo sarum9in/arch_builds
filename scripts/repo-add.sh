@@ -53,6 +53,7 @@ build()
 
 clean
 
+build turtle
 build protobuf3
 build python-pika
 build ^python-pika-git
