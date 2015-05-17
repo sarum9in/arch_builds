@@ -11,6 +11,7 @@ depends=(
   'python'
   'bunsan.common-git'
   'python-bunsan.common-git'
+  'bunsan.crypto-git'
   'bunsan.pm-git'
   'python-bunsan.pm-git'
   'bunsan.protobuf-git'

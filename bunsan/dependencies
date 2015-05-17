@@ -15,5 +15,6 @@ common_python pm_python
 pm pm_python
 pm_python worker_python
 common broker
+crypto broker
 protobuf broker
 pm_python broker
