@@ -13,7 +13,12 @@ depends=(
     'bunsan.bacs.problem-git'
     'libmariadbclient'
 )
-makedepends=('git' 'cmake' 'boost')
+makedepends=(
+  'git'
+  'cmake'
+  'boost'
+  'turtle'
+)
 provides=()
 conflicts=()
 replaces=()

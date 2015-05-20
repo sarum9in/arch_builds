@@ -53,6 +53,7 @@ pkg
 
 /boost.process-svn/boost.process-svn/
 /czmqpp-git/czmqpp-git/
+/turtle/turtle-*.tar.bz2
 
 /obnam/obnam-bzr/obnam-bzr/
 /obnam/python2-cliapp-bzr/

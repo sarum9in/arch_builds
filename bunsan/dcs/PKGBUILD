@@ -1,5 +1,5 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=bunsan.dcs-git
+pkgname='bunsan.dcs-git'
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan dcs"

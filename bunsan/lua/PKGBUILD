@@ -1,5 +1,5 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=bunsan.lua-git
+pkgname='bunsan.lua-git'
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan lua wrapper library"

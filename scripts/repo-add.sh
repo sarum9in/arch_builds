@@ -53,6 +53,7 @@ build()
 
 clean
 
+# Base libraries
 build turtle
 build protobuf3
 build python-pika
@@ -60,15 +61,29 @@ build ^python-pika-git
 build grpc
 build czmq
 build czmqpp-git
+
+# nghttp2
+build ^spdylay
+build ^nghttp2-custom
+
+# Bunsan / Yandex.Contest / BACS
 build bunsan
 build yandex-contest
 build bunsan/bacs
-build qemu-scripts
 build bacs/legacy/userlibs
 build bacs/legacy/web
-build obnam
+
+# Infrastructure
 build ^rabbitmq
 build ^rabbitmqadmin
+
+# Utils
+build obnam
+build qemu-scripts
+
+# Rust
+build ^cargo-bin
+build ^vim-rust-git
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"

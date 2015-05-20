@@ -1,5 +1,5 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=bunsan.utility-git
+pkgname='bunsan.utility-git'
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="bunsan project utility library"
@@ -15,6 +15,7 @@ makedepends=(
   'bunsan.cmake-git'
   'git'
   'boost'
+  'turtle'
 )
 provides=()
 conflicts=()
