@@ -1,6 +1,6 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
 pkgname=qemu-scripts
-pkgver=0.7
+pkgver=0.8
 pkgrel=1
 epoch=
 pkgdesc="QEMU start scripts"
@@ -19,27 +19,32 @@ backup=('etc/qemu-scripts.conf')
 options=()
 install=qemu-scripts.install
 changelog=
-source=($pkgname-$pkgver.tar.xz)
+source=(
+  qemu@.service
+  ifup
+  qemu-scripts-run
+  config
+  qemu-scripts.conf
+)
 noextract=()
-md5sums=('1166a973f384b11c650ba9633e502783')
+md5sums=('d2543dd9325c26207b172dae4de71e48'
+         'efbd81c88c224309ccc0f1b8339de1d3'
+         'af5a295692ae3a4b9842d5a0fbfb9def'
+         'c619260f15f5c038a4804fcf16a991a0'
+         '86cbeca16ead961e2b4513d828d70342')
 
 case $CARCH in
   i686) _qemu_arch="i386" ;;
   *) _qemu_arch="$CARCH" ;;
 esac
 
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-}
-
-#check() {
-#  cd "$srcdir/$pkgname-$pkgver"
-#  make -k check
-#}
-
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  tar cf - . | (cd "$pkgdir" && tar xf -)
+  cd "$srcdir"
+  install -D -m 644 qemu@.service "$pkgdir/usr/lib/systemd/system/qemu@.service"
+  install -D -m 755 ifup "$pkgdir/usr/lib/qemu-scripts/ifup"
+  install -D -m 755 qemu-scripts-run "$pkgdir/usr/bin/qemu-scripts-run"
+  install -D -m 644 config "$pkgdir/srv/kvm/examples/config"
+  install -D -m 644 qemu-scripts.conf "$pkgdir/etc/qemu-scripts.conf"
   sed -r "s|^qemu=.*|qemu=('qemu-system-$_qemu_arch' '-enable-kvm')|" -i "$pkgdir/etc/qemu-scripts.conf"
 }
 
