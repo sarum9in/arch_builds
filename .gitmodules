@@ -1,0 +1,33 @@
+[submodule "czmq"]
+	path = czmq
+	url = git@github.com:sarum9in-aur/czmq.git
+[submodule "grpc"]
+	path = grpc
+	url = git@github.com:sarum9in-aur/grpc.git
+[submodule "protobuf3"]
+	path = protobuf3
+	url = git@github.com:sarum9in-aur/protobuf3.git
+[submodule "obnam/obnam-git"]
+	path = obnam/obnam-git
+	url = git@github.com:sarum9in-aur/obnam-git.git
+[submodule "python-pika"]
+	path = python-pika
+	url = git@github.com:sarum9in-aur/python-pika.git
+[submodule "obnam/python2-cliapp-git"]
+	path = obnam/python2-cliapp-git
+	url = git@github.com:sarum9in-aur/python2-cliapp-git.git
+[submodule "obnam/python2-larch-git"]
+	path = obnam/python2-larch-git
+	url = git@github.com:sarum9in-aur/python2-larch-git.git
+[submodule "obnam/python2-tracing-git"]
+	path = obnam/python2-tracing-git
+	url = git@github.com:sarum9in-aur/python2-tracing-git.git
+[submodule "obnam/python2-ttystatus-git"]
+	path = obnam/python2-ttystatus-git
+	url = git@github.com:sarum9in-aur/python2-ttystatus-git.git
+[submodule "trellis-desk"]
+	path = trellis-desk
+	url = git@github.com:sarum9in-aur/trellis-desk.git
+[submodule "turtle"]
+	path = turtle
+	url = git@github.com:sarum9in-aur/turtle.git
