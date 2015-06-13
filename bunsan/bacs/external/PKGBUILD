@@ -10,6 +10,7 @@ groups=()
 depends=(
   'bunsan.common-git'
   'bunsan.protobuf-git'
+  'grpc'
 )
 makedepends=(
   'bunsan.cmake-git'
