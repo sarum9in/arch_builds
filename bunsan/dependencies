@@ -6,7 +6,6 @@ common utility
 common web
 common curl
 common protobuf
-^cppcms web
 testing process
 process utility
 utility pm

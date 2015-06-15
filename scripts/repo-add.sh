@@ -61,6 +61,8 @@ build ^python-pika-git
 build grpc
 build czmq
 build czmqpp-git
+build ^cppcms
+build ^cppdb
 
 # nghttp2
 build ^spdylay
