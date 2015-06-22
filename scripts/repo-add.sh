@@ -84,6 +84,7 @@ build obnam
 build qemu-scripts
 
 # Rust
+build ^rust-nightly-bin
 build ^cargo-bin
 build ^vim-rust-git
 
