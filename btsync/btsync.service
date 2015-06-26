@@ -1,9 +1,0 @@
-[Unit]
-Description=BitTorrent Sync
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/btsync --nodaemon --config %h/.btsync/config
-
-[Install]
-WantedBy=default.target
