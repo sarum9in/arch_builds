@@ -41,20 +41,17 @@ pkg
 /bunsan/worker/bunsan.worker-git/
 /bunsan/worker_python/python-bunsan.worker-git/
 /cppzmq/cppzmq-git/
-/obnam/python2-cliapp-git/python2-cliapp-git/
-/obnam/python2-larch-git/python2-larch-git/
-/obnam/python2-tracing-git/python2-tracing-git/
-/obnam/python2-ttystatus-git/python2-ttystatus-git/
 /yandex-contest/common/yandex.contest.common-git/
 /yandex-contest/invoker/yandex.contest.invoker-git/
 /yandex-contest/system/yandex.contest.system-git/
 /yandex-contest/invoker-flowctl-interactive/yandex.contest.invoker.flowctl.interactive-git/
 /yandex-contest/invoker-flowctl-pipectl/yandex.contest.invoker.flowctl.pipectl-git/
 
-/boost.process-svn/boost.process-svn/
 /czmqpp-git/czmqpp-git/
 /turtle/turtle-*.tar.bz2
 
-/obnam/obnam-bzr/obnam-bzr/
-/obnam/python2-cliapp-bzr/
 /obnam/obnam-git/obnam-git/
+/obnam/python2-cliapp-git/python2-cliapp-git/
+/obnam/python2-larch-git/python2-larch-git/
+/obnam/python2-tracing-git/python2-tracing-git/
+/obnam/python2-ttystatus-git/python2-ttystatus-git/
