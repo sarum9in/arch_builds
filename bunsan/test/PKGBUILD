@@ -1,10 +1,10 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.testing-git'
+pkgname='bunsan.test-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bunsan project testing library"
+pkgdesc="bunsan project test library"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/testing"
+url="https://github.com/bunsanorg/test"
 license=('GPL')
 groups=()
 depends=('boost-libs')
@@ -19,7 +19,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/testing.git")
+source=("$pkgname::git://github.com/bunsanorg/test.git")
 noextract=()
 md5sums=('SKIP')
 

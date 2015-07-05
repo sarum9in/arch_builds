@@ -14,7 +14,7 @@ depends=(
 )
 makedepends=(
   'bunsan.cmake-git'
-  'bunsan.testing-git'
+  'bunsan.test-git'
   'git'
   'boost'
 )

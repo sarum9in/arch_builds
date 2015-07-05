@@ -1,12 +1,12 @@
 cmake common
-cmake testing
+cmake test
 common crypto
 common process
 common utility
 common web
 common curl
 common protobuf
-testing process
+test process
 process utility
 utility pm
 common common_python
