@@ -83,11 +83,16 @@ build ^rabbitmqadmin
 # Utils
 build obnam
 build qemu-scripts
+build ^arno-iptables-firewall
+build ^pacmixer
 
 # Rust
 build ^rust-nightly-bin
 build ^cargo-bin
 build ^vim-rust-git
+
+# PHP
+build php-grpc
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
