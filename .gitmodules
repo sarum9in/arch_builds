@@ -34,3 +34,6 @@
 [submodule "boost.dll-git"]
 	path = boost.dll-git
 	url = git@github.com:sarum9in-aur/boost.dll-git.git
+[submodule "php-grpc"]
+	path = php-grpc
+	url = git@github.com:sarum9in-aur/php-grpc.git
