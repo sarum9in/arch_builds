@@ -24,6 +24,7 @@ pkg
 /bunsan/bacs/problems/bunsan.bacs.problems-git/
 /bunsan/bacs/statement_provider/bunsan.bacs.statement_provider-git/
 /bunsan/bacs/system/bunsan.bacs.system-git/
+/bunsan/bacs/system_plugins/single/bunsan.bacs.system.single-git/
 /bunsan/broker/bunsan.broker-git/
 /bunsan/cmake/bunsan.cmake-git/
 /bunsan/common/bunsan.common-git/
