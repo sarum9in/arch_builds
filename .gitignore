@@ -39,8 +39,6 @@ pkg
 /bunsan/test/bunsan.test-git/
 /bunsan/utility/bunsan.utility-git/
 /bunsan/web/bunsan.web-git/
-/bunsan/worker/bunsan.worker-git/
-/bunsan/worker_python/python-bunsan.worker-git/
 /cppzmq/cppzmq-git/
 /yandex-contest/common/yandex.contest.common-git/
 /yandex-contest/invoker/yandex.contest.invoker-git/
