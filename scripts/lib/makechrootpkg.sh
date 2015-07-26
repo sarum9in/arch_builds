@@ -24,18 +24,31 @@ patch_makechrootpkg()
     chmod +x "$makechrootpkg"
 }
 
+backup_pkgbuild()
+{
+    cp -f PKGBUILD PKGBUILD.bak
+}
+
+restore_pkgbuild()
+{
+    cp -f PKGBUILD.bak PKGBUILD
+}
+
 raw_make_chroot_pkg()
 {
-    patch_makechrootpkg
-    sed -r "s|^_github_token=.*$|_github_token=${github_token}|" -i PKGBUILD || true
-    local oldver="$(. ./PKGBUILD && echo "$pkgver")"
-    local oldrel="$(. ./PKGBUILD && echo "$pkgrel")"
-    sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
-    sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
-    "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
-    sed -r "s|^pkgver=.*$|pkgver=${oldver}|" -i PKGBUILD
-    sed -r "s|^pkgrel=.*$|pkgrel=${oldrel}|" -i PKGBUILD
-    sed -r "s|^_github_token=.*$|_github_token=|" -i PKGBUILD || true
+    backup_pkgbuild
+    {
+        patch_makechrootpkg
+        sed -r "s|^_github_token=.*$|_github_token=${github_token}|" -i PKGBUILD || true
+        sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
+        sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
+        "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
+    } || {
+        ret=$?
+        restore_pkgbuild
+        return $ret
+    }
+    restore_pkgbuild
 }
 
 pkg_name_version()

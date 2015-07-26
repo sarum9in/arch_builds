@@ -9,6 +9,7 @@ pkg
 *.tar.xz
 *.tar.gz
 *.log
+PKGBUILD.bak
 
 /mirror.cs.istu.ru.tar
 
