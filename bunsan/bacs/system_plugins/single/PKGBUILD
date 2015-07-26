@@ -9,6 +9,7 @@ license=('GPL')
 groups=()
 depends=(
     'bunsan.protobuf-git'
+    'bunsan.broker-git'
     'bunsan.bacs.system-git'
     'bunsan.bacs.problem.single-git'
 )
