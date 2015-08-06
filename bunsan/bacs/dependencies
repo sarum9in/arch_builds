@@ -1,6 +1,7 @@
 external external
 common problem
 common system
+problem system
 problem problem_plugins/single
 problem_plugins/single problems
 problem_plugins/single system_plugins/single

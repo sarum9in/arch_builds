@@ -10,6 +10,7 @@ groups=()
 depends=(
   'bunsan.protobuf-git'
   'bunsan.bacs.common-git'
+  'bunsan.bacs.problem-git'
   'xmlrpc-c'
 
   'python2'
