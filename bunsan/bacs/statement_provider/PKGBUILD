@@ -13,6 +13,7 @@ depends=(
   'bunsan.pm-git'
   'bunsan.protobuf-git'
   'bunsan.bacs.problems-git'
+  'botan'
 )
 makedepends=(
   'bunsan.cmake-git'
