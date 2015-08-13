@@ -9,7 +9,7 @@ license=('GPL')
 groups=()
 depends=(
   'bunsan.common-git'
-  'crypto++'
+  'botan'
 )
 makedepends=(
   'bunsan.cmake-git'

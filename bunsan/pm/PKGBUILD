@@ -9,8 +9,8 @@ license=('GPL')
 groups=()
 depends=(
   'bunsan.common-git'
+  'bunsan.crypto-git'
   'bunsan.utility-git'
-  'crypto++'
 )
 makedepends=(
   'bunsan.cmake-git'
