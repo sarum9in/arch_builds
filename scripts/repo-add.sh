@@ -60,8 +60,8 @@ build python-pika
 build grpc
 build czmq
 build czmqpp-git
-build ^cppcms
-build ^cppdb
+build cppcms
+build cppdb
 build boost.dll-git
 
 # nghttp2
@@ -86,9 +86,9 @@ build ^arno-iptables-firewall
 build ^pacmixer
 
 # Rust
-build ^rust-nightly-bin
-build ^cargo-bin
-build ^vim-rust-git
+#build ^rust-nightly-bin
+#build ^cargo-bin
+#build ^vim-rust-git
 
 # PHP
 build php-grpc
