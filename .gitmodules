@@ -40,3 +40,6 @@
 [submodule "cppcms"]
 	path = cppcms
 	url = git@github.com:sarum9in-aur/cppcms.git
+[submodule "cppdb"]
+	path = cppdb
+	url = git@github.com:sarum9in-aur/cppdb.git
