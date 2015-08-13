@@ -57,7 +57,6 @@ clean
 build turtle
 build protobuf3
 build python-pika
-build ^python-pika-git
 build grpc
 build czmq
 build czmqpp-git
