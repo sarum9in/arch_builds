@@ -10,9 +10,7 @@ test process
 process utility
 utility pm
 common common_python
-common_python pm_python
-pm pm_python
 common broker
 crypto broker
 protobuf broker
-pm_python broker
+pm broker

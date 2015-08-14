@@ -8,6 +8,8 @@ url="https://github.com/bunsanorg/pm"
 license=('GPL')
 groups=()
 depends=(
+  'python'
+  'python-bunsan.common-git'
   'bunsan.common-git'
   'bunsan.crypto-git'
   'bunsan.utility-git'
