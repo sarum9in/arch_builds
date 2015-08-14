@@ -12,8 +12,11 @@ depends=(
   'python'
 )
 makedepends=(
+  'bunsan.cmake-git'
+  'bunsan.test-git'
   'git'
-  'python'
+  'boost'
+  'turtle'
 )
 provides=()
 conflicts=()
@@ -32,7 +35,9 @@ pkgver() {
 
 build() {
   cd "$srcdir/$pkgname"
-  python setup.py build
+  rm -rf build && mkdir build && cd build
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  make $MAKEFLAGS
 }
 
 check() {
@@ -41,6 +46,6 @@ check() {
 }
 
 package() {
-  cd "$srcdir/$pkgname"
-  python setup.py install --root="$pkgdir/" --optimize=1
+  cd "$srcdir/$pkgname/build"
+  make DESTDIR="$pkgdir/" install
 }
