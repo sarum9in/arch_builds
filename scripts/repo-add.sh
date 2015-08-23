@@ -63,6 +63,7 @@ build czmqpp-git
 build cppcms
 build cppdb
 build boost.dll-git
+build ^boost-nowide
 
 # nghttp2
 build ^spdylay
