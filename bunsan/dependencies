@@ -6,6 +6,7 @@ common utility
 common web
 common curl
 common protobuf
+protobuf rpc
 test process
 process utility
 utility pm

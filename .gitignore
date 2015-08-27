@@ -37,6 +37,7 @@ PKGBUILD.bak
 /bunsan/pm_python/python-bunsan.pm-git/
 /bunsan/process/bunsan.process-git/
 /bunsan/protobuf/bunsan.protobuf-git/
+/bunsan/rpc/bunsan.rpc-git/
 /bunsan/test/bunsan.test-git/
 /bunsan/utility/bunsan.utility-git/
 /bunsan/web/bunsan.web-git/
