@@ -43,3 +43,6 @@
 [submodule "cppdb"]
 	path = cppdb
 	url = git@github.com:sarum9in-aur/cppdb.git
+[submodule "mingw-w64-gdbm"]
+	path = mingw-w64-gdbm
+	url = git@github.com:sarum9in-aur/mingw-w64-gdbm.git
