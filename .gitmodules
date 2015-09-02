@@ -46,3 +46,9 @@
 [submodule "mingw-w64-gdbm"]
 	path = mingw-w64-gdbm
 	url = git@github.com:sarum9in-aur/mingw-w64-gdbm.git
+[submodule "mingw-w64-python2"]
+	path = mingw-w64-python2
+	url = git@github.com:sarum9in-aur/mingw-w64-python2.git
+[submodule "mingw-w64-python"]
+	path = mingw-w64-python
+	url = git@github.com:sarum9in-aur/mingw-w64-python.git
