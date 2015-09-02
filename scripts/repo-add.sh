@@ -13,19 +13,7 @@ clean()
 build()
 {
     local pkg="$1"
-    if [[ ${pkg:0:1} = '~' ]]
-    then
-        pushd "${pkg:1}/.."
-        for i in `tsort <dependencies`
-        do
-            build "$i"
-            if [[ $(basename "$pkg") = $i ]]
-            then
-                break
-            fi
-        done
-        popd
-    elif [[ ${pkg:0:1} = '^' ]]
+    if [[ ${pkg:0:1} = '^' ]]
     then
         local tmp="$(mktemp -d)"
         pushd "$tmp"
