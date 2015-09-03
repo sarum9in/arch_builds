@@ -65,7 +65,6 @@ build bacs/legacy/userlibs
 build bacs/legacy/web
 
 # Infrastructure
-build ^rabbitmq
 build ^rabbitmqadmin
 
 # Utils
