@@ -1,15 +1,24 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.problems-git'
+pkgname='bacs.system-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS common problem plugins"
+pkgdesc="BACS system library"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_problem"
+url="https://github.com/bacsorg/system"
 license=('GPL')
 groups=()
 depends=(
   'bunsan.protobuf-git'
-  'bunsan.bacs.problem.single-git'
+  'bacs.common-git'
+  'bacs.problem-git'
+  'xmlrpc-c'
+
+  'python2'
+  'python'
+  'gcc'
+  'mono'
+  'fpc'
+  'java-environment'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -18,12 +27,12 @@ makedepends=(
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.system-git')
+replaces=('bunsan.bacs.system-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_problems.git")
+source=("$pkgname::git://github.com/bacsorg/system.git")
 noextract=()
 md5sums=('SKIP')
 

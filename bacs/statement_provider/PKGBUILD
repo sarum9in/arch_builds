@@ -1,31 +1,33 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.system.single-git'
+pkgname='bacs.statement_provider-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs/system/single plugin"
+pkgdesc="BACS statement_provider interface (library + web site)"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_system_single"
+url="https://github.com/bacsorg/statement_provider"
 license=('GPL')
 groups=()
 depends=(
-    'bunsan.protobuf-git'
-    'bunsan.broker-git'
-    'bunsan.bacs.system-git'
-    'bunsan.bacs.problem.single-git'
+  'bunsan.utility-git'
+  'bunsan.web-git'
+  'bunsan.pm-git'
+  'bunsan.protobuf-git'
+  'bacs.problems-git'
+  'botan'
 )
 makedepends=(
+  'bunsan.cmake-git'
   'git'
-  'cmake'
   'boost'
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.statement_provider-git')
+replaces=('bunsan.bacs.statement_provider-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_system_single.git")
+source=("$pkgname::git://github.com/bacsorg/statement_provider.git")
 noextract=()
 md5sums=('SKIP')
 

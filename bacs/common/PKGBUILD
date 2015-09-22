@@ -1,21 +1,18 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.archive-git'
+pkgname='bacs.common-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS Archive interface (library + web site)"
+pkgdesc="BACS commons"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_archive"
+url="https://github.com/bacsorg/common"
 license=('GPL')
 groups=()
 depends=(
+  'bunsan.common-git'
   'bunsan.process-git'
   'bunsan.utility-git'
-  'bunsan.crypto-git'
-  'bunsan.web-git'
-  'bunsan.pm-git'
+  'bunsan.curl-git'
   'bunsan.protobuf-git'
-  'bunsan.rpc-git'
-  'bunsan.bacs.problems-git'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -24,12 +21,12 @@ makedepends=(
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.common-git')
+replaces=('bunsan.bacs.common-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_archive.git")
+source=("$pkgname::git://github.com/bacsorg/common.git")
 noextract=()
 md5sums=('SKIP')
 
@@ -47,7 +44,7 @@ build() {
 
 check() {
   cd "$srcdir/$pkgname/build"
-  make test ARGS=--output-on-failure
+  #make test ARGS=--output-on-failure
 }
 
 package() {

@@ -60,7 +60,7 @@ build ^nghttp2-custom
 # Bunsan / Yandex.Contest / BACS
 build bunsan
 build yandex-contest
-build bunsan/bacs
+build bacs
 build bacs/legacy/userlibs
 build bacs/legacy/web
 

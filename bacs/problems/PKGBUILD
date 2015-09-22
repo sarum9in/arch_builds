@@ -1,16 +1,15 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.external-git'
+pkgname='bacs.problems-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS external API"
+pkgdesc="BACS common problem plugins"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_external"
+url="https://github.com/bacsorg/problem"
 license=('GPL')
 groups=()
 depends=(
-  'bunsan.common-git'
   'bunsan.protobuf-git'
-  'grpc'
+  'bacs.problem.single-git'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -19,12 +18,12 @@ makedepends=(
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.problems-git')
+replaces=('bunsan.bacs.problems-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_external.git")
+source=("$pkgname::git://github.com/bacsorg/problems.git")
 noextract=()
 md5sums=('SKIP')
 
@@ -42,7 +41,7 @@ build() {
 
 check() {
   cd "$srcdir/$pkgname/build"
-  #make test ARGS=--output-on-failure
+  make test ARGS=--output-on-failure
 }
 
 package() {

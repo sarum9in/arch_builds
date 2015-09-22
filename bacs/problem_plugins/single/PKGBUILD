@@ -1,38 +1,31 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.system-git'
+pkgname='bacs.problem.single-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS system library"
+pkgdesc="bacs/problem/single plugin"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_system"
+url="https://github.com/bacsorg/problem_single"
 license=('GPL')
 groups=()
 depends=(
-  'bunsan.protobuf-git'
-  'bunsan.bacs.common-git'
-  'bunsan.bacs.problem-git'
-  'xmlrpc-c'
-
-  'python2'
-  'python'
-  'gcc'
-  'mono'
-  'fpc'
-  'java-environment'
+    'bunsan.pm-git'
+    'bunsan.protobuf-git'
+    'bacs.problem-git'
+    'libmariadbclient'
 )
 makedepends=(
-  'bunsan.cmake-git'
   'git'
+  'cmake'
   'boost'
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.problem.single-git')
+replaces=('bunsan.bacs.problem.single-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_system.git")
+source=("$pkgname::git://github.com/bacsorg/problem_single.git#branch=legacy0")
 noextract=()
 md5sums=('SKIP')
 
@@ -50,7 +43,7 @@ build() {
 
 check() {
   cd "$srcdir/$pkgname/build"
-  make test ARGS=--output-on-failure
+  #make test ARGS=--output-on-failure
 }
 
 package() {

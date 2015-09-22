@@ -1,16 +1,16 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.problem-git'
+pkgname='bacs.problem-git'
 pkgver=0.0.0
 pkgrel=1
 pkgdesc="BACS problem importer library"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_problem"
+url="https://github.com/bacsorg/problem"
 license=('GPL')
 groups=()
 depends=(
   'bunsan.pm-git'
   'bunsan.protobuf-git'
-  'bunsan.bacs.common-git'
+  'bacs.common-git'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -19,12 +19,12 @@ makedepends=(
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.problem-git')
+replaces=('bunsan.bacs.problem-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_problem.git")
+source=("$pkgname::git://github.com/bacsorg/problem.git")
 noextract=()
 md5sums=('SKIP')
 

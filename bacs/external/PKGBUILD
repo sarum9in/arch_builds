@@ -1,31 +1,30 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.problem.single-git'
+pkgname='bacs.external-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="bacs/problem/single plugin"
+pkgdesc="BACS external API"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_problem_single"
+url="https://github.com/bacsorg/external"
 license=('GPL')
 groups=()
 depends=(
-    'bunsan.pm-git'
-    'bunsan.protobuf-git'
-    'bunsan.bacs.problem-git'
-    'libmariadbclient'
+  'bunsan.common-git'
+  'bunsan.protobuf-git'
+  'grpc'
 )
 makedepends=(
+  'bunsan.cmake-git'
   'git'
-  'cmake'
   'boost'
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.external-git')
+replaces=('bunsan.bacs.external-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_problem_single.git#branch=legacy0")
+source=("$pkgname::git://github.com/bacsorg/external.git")
 noextract=()
 md5sums=('SKIP')
 

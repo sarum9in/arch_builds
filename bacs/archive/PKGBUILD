@@ -1,19 +1,21 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname='bunsan.bacs.statement_provider-git'
+pkgname='bacs.archive-git'
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="BACS statement_provider interface (library + web site)"
+pkgdesc="BACS Archive interface (library + web site)"
 arch=('i686' 'x86_64')
-url="https://github.com/bunsanorg/bacs_statement_provider"
+url="https://github.com/bacsorg/archive"
 license=('GPL')
 groups=()
 depends=(
+  'bunsan.process-git'
   'bunsan.utility-git'
+  'bunsan.crypto-git'
   'bunsan.web-git'
   'bunsan.pm-git'
   'bunsan.protobuf-git'
-  'bunsan.bacs.problems-git'
-  'botan'
+  'bunsan.rpc-git'
+  'bacs.problems-git'
 )
 makedepends=(
   'bunsan.cmake-git'
@@ -22,12 +24,12 @@ makedepends=(
   'turtle'
 )
 provides=()
-conflicts=()
-replaces=()
+conflicts=('bunsan.bacs.archive-git')
+replaces=('bunsan.bacs.archive-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/bacs_statement_provider.git")
+source=("$pkgname::git://github.com/bacsorg/archive.git")
 noextract=()
 md5sums=('SKIP')
 
