@@ -64,6 +64,9 @@ pkg_name_version()
 
 make_chroot_pkg()
 {
+    echo >&2
+    echo "[[[ Making package $PWD ]]]" >&2
+    echo >&2
     raw_make_chroot_pkg "$@"
     local cpkgname
     for cpkgname in $(. ./PKGBUILD && echo "${pkgname[@]}")
@@ -77,10 +80,10 @@ make_chroot_pkg()
             if [[ -f $spkgfile ]]
             then
                 local pkgfile="$(readlink -f "$spkgfile")"
-                echo "$spkgfile exists as $pkgfile"
+                echo "$spkgfile exists as $pkgfile" >&2
                 break
             else
-                echo "$spkgfile does not exist, retrying..."
+                echo "$spkgfile does not exist, retrying..." >&2
             fi
         done
         add_to_db "$pkgfile"
@@ -96,4 +99,6 @@ make_chroot_pkg()
             fi
         done
     done
+    echo >&2
+    echo "[[[ $PWD make completed ]]]" >&2
 }
