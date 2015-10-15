@@ -21,7 +21,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/web.git")
+source=("$pkgname::git+https://github.com/bunsanorg/web.git")
 noextract=()
 md5sums=('SKIP')
 

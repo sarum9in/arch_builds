@@ -24,7 +24,7 @@ replaces=('bunsan.bacs.external-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/external.git")
+source=("$pkgname::git+https://github.com/bacsorg/external.git")
 noextract=()
 md5sums=('SKIP')
 

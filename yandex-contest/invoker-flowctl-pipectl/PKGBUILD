@@ -22,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/yandex_contest_invoker_flowctl_pipectl.git")
+source=("$pkgname::git+https://github.com/bunsanorg/yandex_contest_invoker_flowctl_pipectl.git")
 noextract=()
 md5sums=('SKIP')
 

@@ -20,7 +20,7 @@ source=(
   "$pkgname::git+https://${_github_token}@github.com/istu-cs/bacs_web_legacy.git"
   "contrib::git+https://${_github_token}@github.com/istu-cs/bacs_web_legacy_contrib.git"
   "ads::git+https://${_github_token}@github.com/istu-cs/bacs_web_legacy_ads.git"
-  "git://github.com/Synchro/PHPMailer.git"
+  "git+https://github.com/Synchro/PHPMailer.git"
 )
 noextract=()
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')

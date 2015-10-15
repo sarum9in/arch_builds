@@ -24,7 +24,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/crypto.git")
+source=("$pkgname::git+https://github.com/bunsanorg/crypto.git")
 noextract=()
 md5sums=('SKIP')
 

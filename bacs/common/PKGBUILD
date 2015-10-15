@@ -26,7 +26,7 @@ replaces=('bunsan.bacs.common-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/common.git")
+source=("$pkgname::git+https://github.com/bacsorg/common.git")
 noextract=()
 md5sums=('SKIP')
 

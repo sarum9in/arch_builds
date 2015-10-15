@@ -22,7 +22,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/dcs.git")
+source=("$pkgname::git+https://github.com/bunsanorg/dcs.git")
 noextract=()
 md5sums=('SKIP')
 

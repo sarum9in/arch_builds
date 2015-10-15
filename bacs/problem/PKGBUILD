@@ -24,7 +24,7 @@ replaces=('bunsan.bacs.problem-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/problem.git")
+source=("$pkgname::git+https://github.com/bacsorg/problem.git")
 noextract=()
 md5sums=('SKIP')
 

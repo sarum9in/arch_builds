@@ -23,7 +23,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/rpc.git")
+source=("$pkgname::git+https://github.com/bunsanorg/rpc.git")
 noextract=()
 md5sums=('SKIP')
 

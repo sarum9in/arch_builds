@@ -24,7 +24,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/common_python.git")
+source=("$pkgname::git+https://github.com/bunsanorg/common_python.git")
 noextract=()
 md5sums=('SKIP')
 

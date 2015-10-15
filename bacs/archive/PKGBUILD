@@ -29,7 +29,7 @@ replaces=('bunsan.bacs.archive-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/archive.git")
+source=("$pkgname::git+https://github.com/bacsorg/archive.git")
 noextract=()
 md5sums=('SKIP')
 

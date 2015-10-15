@@ -27,7 +27,7 @@ replaces=('bunsan.bacs.statement_provider-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/statement_provider.git")
+source=("$pkgname::git+https://github.com/bacsorg/statement_provider.git")
 noextract=()
 md5sums=('SKIP')
 

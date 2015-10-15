@@ -18,7 +18,7 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/cmake.git")
+source=("$pkgname::git+https://github.com/bunsanorg/cmake.git")
 noextract=()
 md5sums=('SKIP')
 

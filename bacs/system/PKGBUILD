@@ -31,7 +31,7 @@ replaces=('bunsan.bacs.system-git')
 backup=()
 options=()
 install=
-source=("$pkgname::git://github.com/bacsorg/system.git")
+source=("$pkgname::git+https://github.com/bacsorg/system.git")
 noextract=()
 md5sums=('SKIP')
 

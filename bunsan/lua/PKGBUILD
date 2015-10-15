@@ -22,8 +22,8 @@ replaces=()
 backup=()
 options=()
 install=
-source=("$pkgname::git://cs.istu.ru/bunsan_lua.git")
-#source=("$pkgname::git://github.com/bunsanorg/lua.git")
+source=("$pkgname::git+https://cs.istu.ru/bunsan_lua.git")
+#source=("$pkgname::git+https://github.com/bunsanorg/lua.git")
 noextract=()
 md5sums=('SKIP')
 

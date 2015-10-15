@@ -23,7 +23,7 @@ replaces=()
 backup=('etc/yandex/contest/invoker/lxc.conf')
 options=()
 install=
-source=("$pkgname::git://github.com/bunsanorg/yandex_contest_invoker.git"
+source=("$pkgname::git+https://github.com/bunsanorg/yandex_contest_invoker.git"
         'lxc.conf'
         'yandex-contest-invoker.sh')
 noextract=()
