@@ -72,6 +72,7 @@ build obnam
 build qemu-scripts
 build ^arno-iptables-firewall
 build ^pacmixer
+build python-cram
 
 # PHP
 build php-grpc

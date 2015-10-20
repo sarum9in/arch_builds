@@ -52,3 +52,6 @@
 [submodule "mingw-w64-python"]
 	path = mingw-w64-python
 	url = https://github.com/sarum9in-aur/mingw-w64-python.git
+[submodule "python-cram"]
+	path = python-cram
+	url = https://github.com/sarum9in-aur/python-cram.git
