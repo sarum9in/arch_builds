@@ -39,7 +39,6 @@ raw_make_chroot_pkg()
     backup_pkgbuild
     {
         patch_makechrootpkg
-        sed -r "s|^_github_token=.*$|_github_token=${github_token}|" -i PKGBUILD || true
         sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
         sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
         "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
