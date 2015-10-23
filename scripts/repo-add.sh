@@ -43,6 +43,7 @@ clean
 
 # Base libraries
 build turtle
+build turtle-git
 build protobuf3
 build python-pika
 build grpc

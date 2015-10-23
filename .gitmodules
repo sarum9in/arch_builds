@@ -55,3 +55,6 @@
 [submodule "python-cram"]
 	path = python-cram
 	url = https://github.com/sarum9in-aur/python-cram.git
+[submodule "turtle-git"]
+	path = turtle-git
+	url = https://github.com/sarum9in-aur/turtle-git.git
