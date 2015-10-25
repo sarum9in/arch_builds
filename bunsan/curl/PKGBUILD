@@ -16,7 +16,7 @@ makedepends=(
   'bunsan.test-git'
   'git'
   'boost'
-  'turtle'
+  'turtle-git'
 )
 provides=()
 conflicts=()

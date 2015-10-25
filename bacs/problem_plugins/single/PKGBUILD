@@ -17,7 +17,7 @@ makedepends=(
   'git'
   'cmake'
   'boost'
-  'turtle'
+  'turtle-git'
 )
 provides=()
 conflicts=('bunsan.bacs.problem.single-git')
