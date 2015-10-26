@@ -1,60 +1,80 @@
 [submodule "czmq"]
 	path = czmq
 	url = https://github.com/sarum9in-aur/czmq.git
+	ignore = untracked
 [submodule "grpc"]
 	path = grpc
 	url = https://github.com/sarum9in-aur/grpc.git
+	ignore = untracked
 [submodule "protobuf3"]
 	path = protobuf3
 	url = https://github.com/sarum9in-aur/protobuf3.git
+	ignore = untracked
 [submodule "obnam/obnam-git"]
 	path = obnam/obnam-git
 	url = https://github.com/sarum9in-aur/obnam-git.git
+	ignore = untracked
 [submodule "python-pika"]
 	path = python-pika
 	url = https://github.com/sarum9in-aur/python-pika.git
+	ignore = untracked
 [submodule "obnam/python2-cliapp-git"]
 	path = obnam/python2-cliapp-git
 	url = https://github.com/sarum9in-aur/python2-cliapp-git.git
+	ignore = untracked
 [submodule "obnam/python2-larch-git"]
 	path = obnam/python2-larch-git
 	url = https://github.com/sarum9in-aur/python2-larch-git.git
+	ignore = untracked
 [submodule "obnam/python2-tracing-git"]
 	path = obnam/python2-tracing-git
 	url = https://github.com/sarum9in-aur/python2-tracing-git.git
+	ignore = untracked
 [submodule "obnam/python2-ttystatus-git"]
 	path = obnam/python2-ttystatus-git
 	url = https://github.com/sarum9in-aur/python2-ttystatus-git.git
+	ignore = untracked
 [submodule "trellis-desk"]
 	path = trellis-desk
 	url = https://github.com/sarum9in-aur/trellis-desk.git
+	ignore = untracked
 [submodule "turtle"]
 	path = turtle
 	url = https://github.com/sarum9in-aur/turtle.git
+	ignore = untracked
 [submodule "boost.dll-git"]
 	path = boost.dll-git
 	url = https://github.com/sarum9in-aur/boost.dll-git.git
+	ignore = untracked
 [submodule "php-grpc"]
 	path = php-grpc
 	url = https://github.com/sarum9in-aur/php-grpc.git
+	ignore = untracked
 [submodule "cppcms"]
 	path = cppcms
 	url = https://github.com/sarum9in-aur/cppcms.git
+	ignore = untracked
 [submodule "cppdb"]
 	path = cppdb
 	url = https://github.com/sarum9in-aur/cppdb.git
+	ignore = untracked
 [submodule "mingw-w64-gdbm"]
 	path = mingw-w64-gdbm
 	url = https://github.com/sarum9in-aur/mingw-w64-gdbm.git
+	ignore = untracked
 [submodule "mingw-w64-python2"]
 	path = mingw-w64-python2
 	url = https://github.com/sarum9in-aur/mingw-w64-python2.git
+	ignore = untracked
 [submodule "mingw-w64-python"]
 	path = mingw-w64-python
 	url = https://github.com/sarum9in-aur/mingw-w64-python.git
+	ignore = untracked
 [submodule "python-cram"]
 	path = python-cram
 	url = https://github.com/sarum9in-aur/python-cram.git
+	ignore = untracked
 [submodule "turtle-git"]
 	path = turtle-git
 	url = https://github.com/sarum9in-aur/turtle-git.git
+	ignore = untracked
