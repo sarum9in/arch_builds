@@ -18,8 +18,11 @@ build()
         local tmp="$(mktemp -d)"
         pushd "$tmp"
         chmod 777 "$tmp"
-        yaourt -G "${pkg:1}"
+        # FIXME it works but returns non-zero
+        yaourt -G "${pkg:1}" || true
         cd "${pkg:1}"
+        # FIXME test PKGBUILD presence instead of yaourt's exit status
+        test -f PKGBUILD
         chmod 777 .
         make_chroot_pkg
         popd
