@@ -57,10 +57,6 @@ build cppdb
 build boost.dll-git
 build ^boost-nowide
 
-# nghttp2
-build ^spdylay
-build ^nghttp2-custom
-
 # Bunsan / Yandex.Contest / BACS
 build bunsan
 build yandex-contest
