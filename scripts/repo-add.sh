@@ -77,6 +77,13 @@ build python-cram
 # PHP
 build php-grpc
 
+# letsencrypt
+build ^python2-parsedatetime
+build ^python2-pythondialog
+build ^letsencrypt
+build ^letsencrypt-apache
+build ^letsencrypt-nginx
+
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
 rm -f "repo.db.tar.gz.old"
