@@ -42,6 +42,17 @@ build()
     fi
 }
 
+build-go()
+{
+    local tmp="$(mktemp -d)"
+    pushd "$tmp"
+    chmod 777 "$tmp"
+    go-makepkg -d . -n "$@"
+    make_chroot_pkg
+    popd
+    rm -rf "$tmp"
+}
+
 clean
 
 # Base libraries
@@ -83,6 +94,9 @@ build ^python2-pythondialog
 build ^letsencrypt
 build ^letsencrypt-apache
 build ^letsencrypt-nginx
+
+# Go packages
+build-go go-bunsan.broker-git "bunsan.borker" git+https://github.com/bunsanorg/broker/...
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
