@@ -15,31 +15,46 @@ build()
     local pkg="$1"
     if [[ ${pkg:0:1} = '^' ]]
     then
-        local tmp="$(mktemp -d)"
-        pushd "$tmp"
-        chmod 777 "$tmp"
-        # FIXME it works but returns non-zero
-        yaourt -G "${pkg:1}" || true
-        cd "${pkg:1}"
-        # FIXME test PKGBUILD presence instead of yaourt's exit status
-        test -f PKGBUILD
-        chmod 777 .
-        make_chroot_pkg
-        popd
-        rm -rf "$tmp"
-    else
-        pushd "${pkg}"
-        if [[ -f dependencies ]]
+        if [[ -d "${pkg:1}" ]]
         then
-            for i in $(tsort <(egrep -v '^#' dependencies))
-            do
-                build "$i"
-            done
+            build-directory "${pkg:1}"
         else
-            make_chroot_pkg
+            build-yaourt "${pkg:1}"
         fi
-        popd
+    else
+        build-directory "$pkg"
     fi
+}
+
+build-directory()
+{
+    pushd "$1"
+    if [[ -f dependencies ]]
+    then
+        for i in $(tsort <(egrep -v '^#' dependencies))
+        do
+            build "$i"
+        done
+    else
+        make_chroot_pkg
+    fi
+    popd
+}
+
+build-yaourt()
+{
+    local tmp="$(mktemp -d)"
+    pushd "$tmp"
+    chmod 777 "$tmp"
+    # FIXME it works but returns non-zero
+    yaourt -G "$1" || true
+    cd "$1"
+    # FIXME test PKGBUILD presence instead of yaourt's exit status
+    test -f PKGBUILD
+    chmod 777 .
+    make_chroot_pkg
+    popd
+    rm -rf "$tmp"
 }
 
 build-go()
