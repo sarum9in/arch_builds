@@ -89,8 +89,6 @@ build python-cram
 build php-grpc
 
 # letsencrypt
-build ^python2-parsedatetime
-build ^python2-pythondialog
 build ^letsencrypt
 build ^letsencrypt-apache
 build ^letsencrypt-nginx
