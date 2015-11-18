@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-reporel=1222
+reporel=1225
 
 counter_file="$(readlink -f "$BASH_SOURCE")"
 
