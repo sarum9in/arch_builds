@@ -8,6 +8,7 @@ pkg
 *.src.tar.gz
 *.tar.xz
 *.tar.gz
+*.tar.bz2
 *.log
 PKGBUILD.bak
 
@@ -44,15 +45,13 @@ PKGBUILD.bak
 /bunsan/utility/bunsan.utility-git/
 /bunsan/web/bunsan.web-git/
 /cppzmq/cppzmq-git/
+/czmqpp-git/czmqpp-git/
+/turtle-git/turtle-git/
 /yandex-contest/common/yandex.contest.common-git/
 /yandex-contest/invoker/yandex.contest.invoker-git/
 /yandex-contest/system/yandex.contest.system-git/
 /yandex-contest/invoker-flowctl-interactive/yandex.contest.invoker.flowctl.interactive-git/
 /yandex-contest/invoker-flowctl-pipectl/yandex.contest.invoker.flowctl.pipectl-git/
-
-/czmqpp-git/czmqpp-git/
-/turtle/turtle-*.tar.bz2
-/turtle-git/turtle-git/
 
 /obnam/obnam-git/obnam-git/
 /obnam/python2-cliapp-git/python2-cliapp-git/
