@@ -62,7 +62,7 @@ build-go()
     local tmp="$(mktemp -d)"
     pushd "$tmp"
     chmod 777 "$tmp"
-    go-makepkg -d . -n "$@"
+    go-makepkg -d . "$@"
     make_chroot_pkg
     popd
     rm -rf "$tmp"
@@ -109,7 +109,9 @@ build ^letsencrypt-apache
 build ^letsencrypt-nginx
 
 # Go packages
-build-go go-bunsan.broker-git "bunsan.borker" git+https://github.com/bunsanorg/broker/...
+build-go -n go-bunsan.broker-git \
+    -D bunsan.pm-git,bunsan.broker-git \
+    "bunsan.borker" git+https://github.com/bunsanorg/broker/...
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
