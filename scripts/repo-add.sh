@@ -103,11 +103,6 @@ build python-cram
 # PHP
 build php-grpc
 
-# letsencrypt
-build ^letsencrypt
-build ^letsencrypt-apache
-build ^letsencrypt-nginx
-
 # Go packages
 build-go -n go-bunsan.broker-git \
     -D bunsan.pm-git,bunsan.broker-git \
