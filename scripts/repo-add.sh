@@ -100,9 +100,6 @@ build ^arno-iptables-firewall
 build ^pacmixer
 build python-cram
 
-# PHP
-build php-grpc
-
 # Go packages
 build-go -n go-bunsan.broker-git \
     -D bunsan.pm-git,bunsan.broker-git \
