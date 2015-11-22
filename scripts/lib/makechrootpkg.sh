@@ -66,7 +66,17 @@ make_chroot_pkg()
     echo >&2
     echo "[[[ Making package $PWD ]]]" >&2
     echo >&2
-    raw_make_chroot_pkg "$@"
+    local try
+    for try in `seq 1 10`
+    do
+        if raw_make_chroot_pkg "$@"
+        then
+            break
+        else
+            echo "Failed $PWD, retrying $try time in 10 seconds, press Ctrl-C to abort..." >&2
+            sleep 10
+        fi
+    done
     local cpkgname
     for cpkgname in $(. ./PKGBUILD && echo "${pkgname[@]}")
     do
