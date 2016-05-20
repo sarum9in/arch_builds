@@ -54,10 +54,6 @@
 	path = cppdb
 	url = https://github.com/sarum9in-aur/cppdb.git
 	ignore = untracked
-[submodule "mingw-w64-gdbm"]
-	path = mingw-w64-gdbm
-	url = https://github.com/sarum9in-aur/mingw-w64-gdbm.git
-	ignore = untracked
 [submodule "mingw-w64-python2"]
 	path = mingw-w64-python2
 	url = https://github.com/sarum9in-aur/mingw-w64-python2.git
