@@ -34,6 +34,18 @@ restore_pkgbuild()
     cp -f PKGBUILD.bak PKGBUILD
 }
 
+pkg_name_version()
+(
+    . "$1"
+    if [[ -n $epoch ]]
+    then
+        echo -n "$epoch:"
+    fi
+    # let pkgrel to be overridden
+    pkgrel="$2"
+    echo "$pkgver-$pkgrel"
+)
+
 raw_make_chroot_pkg()
 {
     backup_pkgbuild
@@ -41,6 +53,7 @@ raw_make_chroot_pkg()
         patch_makechrootpkg
         sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
         sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
+        pkgversion="$(pkg_name_version ./PKGBUILD "$reporel")"
         "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
     } || {
         ret=$?
@@ -49,17 +62,6 @@ raw_make_chroot_pkg()
     }
     restore_pkgbuild
 }
-
-pkg_name_version()
-(
-    . "$1"
-    echo -n "$cpkgname-"
-    if [[ -n $epoch ]]
-    then
-        echo -n "$epoch:"
-    fi
-    echo "$pkgver-$pkgrel"
-)
 
 make_chroot_pkg()
 {
@@ -85,7 +87,8 @@ make_chroot_pkg()
 
         for arch in any i686 x86_64
         do
-            local spkgfile="$(pkg_name_version "$chroot/$user/startdir/PKGBUILD")-${arch}.pkg.tar.xz"
+            # pkgversion is set in raw_make_chroot_pkg()
+            local spkgfile="$cpkgname-$pkgversion-$arch.pkg.tar.xz"
             if [[ -f $spkgfile ]]
             then
                 local pkgfile="$(readlink -f "$spkgfile")"
