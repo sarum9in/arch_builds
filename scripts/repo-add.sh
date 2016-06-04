@@ -99,6 +99,10 @@ build qemu-scripts
 build ^arno-iptables-firewall
 build ^pacmixer
 build python-cram
+build ip-wait-online
+
+build ^cower
+build ^pacaur
 
 # Go packages
 build-go -n go-bunsan.broker-git \

@@ -70,3 +70,6 @@
 	path = turtle-git
 	url = https://github.com/sarum9in-aur/turtle-git.git
 	ignore = untracked
+[submodule "ip-wait-online"]
+	path = ip-wait-online
+	url = https://github.com/sarum9in-aur/ip-wait-online.git
