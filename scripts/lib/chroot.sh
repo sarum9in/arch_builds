@@ -48,6 +48,7 @@ update_chroot()
 
 make_chroot()
 {
+    pacman --noconfirm -Suwy
     if [[ -d $chroot/root ]]
     then
         if ! update_chroot
