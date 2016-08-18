@@ -105,7 +105,9 @@ build ^cower
 build ^pacaur
 
 # Go packages
-build-go -n go-bunsan.broker-git \
+build-go \
+    -m "Aleksey Filippov <sarum9in@gmail.com>" \
+    -n go-bunsan.broker-git \
     -D bunsan.pm-git,bunsan.broker-git \
     "bunsan.borker" git+https://github.com/bunsanorg/broker/...
 
