@@ -87,6 +87,9 @@ build ^boost-nowide
 build bunsan
 build yandex-contest
 build bacs
+
+# legacy may depend on new features
+build bacs/legacy/backend
 build bacs/legacy/userlibs
 build bacs/legacy/web
 
