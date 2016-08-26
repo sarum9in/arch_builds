@@ -22,6 +22,7 @@ PKGBUILD.bak
 /bacs/archive/bacs.archive-git/
 /bacs/common/bacs.common-git/
 /bacs/external/bacs.external-git/
+/bacs/legacy/backend/bacs.legacy.backend-git/
 /bacs/problem/bacs.problem-git/
 /bacs/problem_plugins/single/bacs.problem.single-git/
 /bacs/problems/bacs.problems-git/
