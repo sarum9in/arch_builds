@@ -18,6 +18,9 @@ build()
         if [[ -d "${pkg:1}" ]]
         then
             build-directory "${pkg:1}"
+        elif [[ -d "patched/${pkg:1}" ]]
+        then
+            build-directory "patched/${pkg:1}"
         else
             build-yaourt "${pkg:1}"
         fi
@@ -69,6 +72,12 @@ build-go()
 }
 
 clean
+
+# Patched from base system
+for pkg in $(ls patched)
+do
+    build-directory "patched/$pkg"
+done
 
 # Base libraries
 build turtle
