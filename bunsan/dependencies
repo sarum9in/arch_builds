@@ -4,7 +4,6 @@ common crypto
 common process
 common utility
 common web
-common curl
 common protobuf
 protobuf rpc
 test process

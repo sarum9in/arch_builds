@@ -11,7 +11,6 @@ depends=(
   'bunsan.common-git'
   'bunsan.process-git'
   'bunsan.utility-git'
-  'bunsan.curl-git'
   'bunsan.protobuf-git'
 )
 makedepends=(
