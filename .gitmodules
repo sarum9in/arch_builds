@@ -73,3 +73,6 @@
 [submodule "ip-wait-online"]
 	path = ip-wait-online
 	url = https://github.com/sarum9in-aur/ip-wait-online.git
+[submodule "boost-nowide"]
+	path = boost-nowide
+	url = https://github.com/sarum9in-aur/boost-nowide.git
