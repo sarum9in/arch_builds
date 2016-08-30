@@ -60,6 +60,7 @@ build-yaourt()
     rm -rf "$tmp"
 }
 
+# go get -u github.com/seletskiy/go-makepkg
 build-go()
 {
     local tmp="$(mktemp -d)"
