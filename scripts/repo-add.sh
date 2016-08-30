@@ -22,7 +22,7 @@ build()
         then
             build-directory "patched/${pkg:1}"
         else
-            build-yaourt "${pkg:1}"
+            build-aur "${pkg:1}"
         fi
     else
         build-directory "$pkg"
@@ -44,15 +44,13 @@ build-directory()
     popd
 }
 
-build-yaourt()
+build-aur()
 {
     local tmp="$(mktemp -d)"
     pushd "$tmp"
     chmod 777 "$tmp"
-    # FIXME it works but returns non-zero
-    yaourt -G "$1" || true
+    cower --download --ignorerepo "$1"
     cd "$1"
-    # FIXME test PKGBUILD presence instead of yaourt's exit status
     test -f PKGBUILD
     chmod 777 .
     make_chroot_pkg
