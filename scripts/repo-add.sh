@@ -120,7 +120,7 @@ build-go \
     -m "Aleksey Filippov <sarum9in@gmail.com>" \
     -n go-bunsan.broker-git \
     -D bunsan.pm-git,bunsan.broker-git \
-    "bunsan.borker" git+https://github.com/bunsanorg/broker/...
+    "bunsan.broker" git+https://github.com/bunsanorg/broker/...
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
