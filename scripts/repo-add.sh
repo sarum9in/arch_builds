@@ -88,7 +88,6 @@ build czmq
 build czmqpp-git
 build cppcms
 build cppdb
-build boost.dll-git
 build boost-nowide
 
 # Bunsan / Yandex.Contest / BACS

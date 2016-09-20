@@ -42,10 +42,6 @@
 	path = turtle
 	url = https://github.com/sarum9in-aur/turtle.git
 	ignore = untracked
-[submodule "boost.dll-git"]
-	path = boost.dll-git
-	url = https://github.com/sarum9in-aur/boost.dll-git.git
-	ignore = untracked
 [submodule "cppcms"]
 	path = cppcms
 	url = https://github.com/sarum9in-aur/cppcms.git

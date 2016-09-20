@@ -7,7 +7,7 @@ arch=('i686' 'x86_64')
 url="https://github.com/bunsanorg/common"
 license=('GPL')
 groups=()
-depends=('boost-libs' 'boost.dll-git' 'boost-nowide')
+depends=('boost-libs' 'boost-nowide')
 makedepends=(
   'bunsan.cmake-git'
   'bunsan.test-git'
