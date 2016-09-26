@@ -89,6 +89,8 @@ build czmqpp-git
 build cppcms
 build cppdb
 build boost-nowide
+build boost.dll-git
+build ^libprotobuf2
 
 # Bunsan / Yandex.Contest / BACS
 build bunsan
