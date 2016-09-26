@@ -107,7 +107,6 @@ build ^rabbitmqadmin
 
 # Utils
 build obnam
-build qemu-scripts
 build ^arno-iptables-firewall
 build ^pacmixer
 build python-cram
