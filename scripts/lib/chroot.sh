@@ -3,6 +3,12 @@
 source "$(dirname "$0")/lib/config.sh"
 
 vcs=(bzr git mercurial svn)
+languages=(
+    go
+    php
+    python2 python cython cython2
+    cargo rust
+)
 
 chroot="$root/chroot"
 
@@ -21,7 +27,7 @@ repo_sync()
 new_chroot()
 {
     mkdir -p "$chroot"
-    mkarchroot "$chroot/root" base base-devel sudo "${vcs[@]}"
+    mkarchroot "$chroot/root" base base-devel sudo "${vcs[@]}" "${languages[@]}"
     local mflags="$(sed -rn 's|^MAKEFLAGS=(".*")$|\1|p' /etc/makepkg.conf)"
     if [[ -n $mflags ]]
     then
