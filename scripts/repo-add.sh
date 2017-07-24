@@ -81,11 +81,9 @@ done
 # Base libraries
 build turtle
 build turtle-git
-build protobuf3
 build python-pika
 build grpc
 build czmq
-build czmqpp-git
 build cppcms
 build cppdb
 build boost-nowide
@@ -121,6 +119,11 @@ build-go \
     -n go-bunsan.broker-git \
     -D bunsan.pm-git,bunsan.broker-git \
     "bunsan.broker" git+https://github.com/bunsanorg/broker/...
+
+build-go \
+    -m "Aleksey Filippov <sarum9in@gmail.com>" \
+    -n go-manul-git \
+    "manul" git+https://github.com/kovetskiy/manul/...
 
 pushd "$chroot/$user/repo"
 mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"

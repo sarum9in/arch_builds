@@ -6,10 +6,6 @@
 	path = grpc
 	url = https://github.com/sarum9in-aur/grpc.git
 	ignore = untracked
-[submodule "protobuf3"]
-	path = protobuf3
-	url = https://github.com/sarum9in-aur/protobuf3.git
-	ignore = untracked
 [submodule "obnam/obnam-git"]
 	path = obnam/obnam-git
 	url = https://github.com/sarum9in-aur/obnam-git.git
