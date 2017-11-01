@@ -14,7 +14,7 @@ depends=(
   'bunsan.crypto-git'
   'bunsan.pm-git'
   'bunsan.protobuf-git'
-  'python-protobuf3'
+  'python-protobuf'
   'python-pika'
 )
 makedepends=(
