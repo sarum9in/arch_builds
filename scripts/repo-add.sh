@@ -100,9 +100,6 @@ build bacs/legacy/backend
 build bacs/legacy/userlibs
 build bacs/legacy/web
 
-# Infrastructure
-build ^rabbitmqadmin
-
 # Utils
 build obnam
 build ^arno-iptables-firewall
