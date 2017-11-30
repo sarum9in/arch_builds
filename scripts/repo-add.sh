@@ -85,8 +85,6 @@ build python-pika
 build grpc
 build czmq
 build cppcms
-build cppdb
-build boost-nowide
 build boost.dll-git
 build ^libprotobuf2
 

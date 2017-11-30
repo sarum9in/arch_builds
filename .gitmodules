@@ -39,11 +39,11 @@
 	url = https://github.com/sarum9in-aur/turtle.git
 	ignore = untracked
 [submodule "cppcms"]
-	path = cppcms
+	path = cppcms/cppcms
 	url = https://github.com/sarum9in-aur/cppcms.git
 	ignore = untracked
 [submodule "cppdb"]
-	path = cppdb
+	path = cppcms/cppdb
 	url = https://github.com/sarum9in-aur/cppdb.git
 	ignore = untracked
 [submodule "mingw-w64-python2"]
@@ -66,5 +66,5 @@
 	path = ip-wait-online
 	url = https://github.com/sarum9in-aur/ip-wait-online.git
 [submodule "boost-nowide"]
-	path = boost-nowide
+	path = cppcms/boost-nowide
 	url = https://github.com/sarum9in-aur/boost-nowide.git
