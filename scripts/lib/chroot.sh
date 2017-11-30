@@ -24,6 +24,43 @@ repo_sync()
     chroot_run "${1:-root}" pacman -Sy
 }
 
+add_to_db()
+{
+    local prefix="$1"
+    local pkgfile="$2"
+    local pkgname="$(basename "$pkgfile")"
+    local repo_dir="$chroot/$prefix/repo"
+    local repo_db="$repo_dir/${repo_name}.db.tar.gz"
+    local repo_sig="$repo_dir/${repo_db}.sig"
+    local pkgdest="$repo_dir/$pkgname"
+    mkdir -p "$repo_dir"
+    chown "$user:$group" "$repo_dir"
+    sudo -u "$user" -g "$group" cp -vf "$pkgfile" "$pkgdest"
+    sign_file "$pkgdest"
+    sudo -u "$user" -g "$group" repo-add "$repo_db" "$pkgdest"
+    rm -f "$repo_sig"
+    sign_file "$repo_db"
+    repo_sync "$prefix"
+}
+
+init_keyring()
+{
+    pacman-key --config="$chroot/root/etc/pacman.conf" --recv-keys "$signkey"
+    pacman-key --config="$chroot/root/etc/pacman.conf" --lsign "$signkey"
+}
+
+sign_file()
+{
+    local file="$1"
+    rm -f "${file}.sig"
+    sudo -u "$user" -g "$group" env "GPG_TTY=$GPG_TTY" \
+        gpg --detach-sign \
+            --local-user "$signkey" \
+            --use-agent \
+            --no-armor \
+            "$file"
+}
+
 new_chroot()
 {
     mkdir -p "$chroot"
@@ -34,17 +71,16 @@ new_chroot()
         sed -ri "s|^.*(MAKEFLAGS=).*$|\1$mflags|" "$chroot/root/etc/makepkg.conf"
     fi
     sed -ri 's|^CheckSpace|#&|' "$chroot/root/etc/pacman.conf"
-    sed -ri 's|^(SigLevel[[:space:]]*=).*$|\1 Optional|' "$chroot/root/etc/pacman.conf"
+    sed -ri 's|^(SigLevel[[:space:]]*=).*$|\1 TrustedOnly|' "$chroot/root/etc/pacman.conf"
     sed -ri 's|^.*REPOSITORIES.*$|&\n[repo]\nServer = file:///repo\n|' "$chroot/root/etc/pacman.conf"
-    mkdir -p "$chroot/root/repo"
+    sed -ri "s|^\[repo\]$|[$repo_name]|" "$chroot/root/etc/pacman.conf"
+    init_keyring
     pushd "$root/empty"
     rm -f *.pkg.tar.xz
     sudo -u "$user" -g "$group" makepkg -f
     local pkgname="$(ls *.pkg.tar.xz)"
-    cp -f "$pkgname" "$chroot/root/repo"
-    popd
-    repo-add "$chroot/root/repo/repo.db.tar.gz" "$chroot/root/repo/$pkgname"
-    repo_sync
+    add_to_db root "$pkgname"
+    popd &>/dev/null
 }
 
 update_chroot()

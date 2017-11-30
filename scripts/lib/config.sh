@@ -6,7 +6,10 @@ scriptsdir="$root/scripts"
 bindir="$scriptsdir/bin"
 libdir="$scriptsdir/lib"
 
-repo_name="mirror.cs.istu.ru"
+# Aleksey Filippov <sarum9in@gmail.com>
+signkey="754CD5CD2FA687AC1B277181E21B9964B5425F2B"
+
+repo_name="breakingkeys"
 
 try_source()
 {

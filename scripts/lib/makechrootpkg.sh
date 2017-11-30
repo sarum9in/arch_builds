@@ -6,17 +6,6 @@ export LC_ALL=C
 
 readonly makechrootpkg="$bindir/makechrootpkg"
 
-add_to_db()
-{
-    local pkgfile="$1"
-    mkdir -p "$chroot/$user/repo"
-    pushd "$chroot/$user/repo" >/dev/null
-    cp -v "$pkgfile" .
-    repo-add repo.db.tar.gz "${pkgfile##*/}"
-    popd >/dev/null
-    repo_sync "$user"
-}
-
 patch_makechrootpkg()
 {
     mkdir -p "$root/scripts/bin"
@@ -98,11 +87,11 @@ make_chroot_pkg()
                 echo "$spkgfile does not exist, retrying..." >&2
             fi
         done
-        add_to_db "$pkgfile"
+        add_to_db "$user" "$pkgfile"
         failed=0
         while ! chroot_run "$user" pacman --noconfirm -Sw "$cpkgname"
         do
-            add_to_db "$pkgfile"
+            add_to_db "$user" "$pkgfile"
             failed=$((failed + 1))
             if (( failed >= 10 ))
             then

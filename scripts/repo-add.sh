@@ -120,12 +120,6 @@ build-go \
     -n go-manul-git \
     "manul" git+https://github.com/kovetskiy/manul/...
 
-pushd "$chroot/$user/repo"
-mv "repo.db.tar.gz" "${repo_name}.db.tar.gz"
-rm -f "repo.db.tar.gz.old"
-rm -f "repo.db"
-ln -sf "${repo_name}.db.tar.gz" "${repo_name}.db"
-tar cf "$root/${repo_name}.tar" .
-popd
-
+# Finalize repository creation
+tar cf "$root/${repo_name}.tar" -C "$chroot/$user/repo" .
 update_reporel

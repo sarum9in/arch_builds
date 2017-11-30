@@ -1,11 +1,11 @@
 # Maintainer: Aleksey Filippov <sarum9in@gmail.com>
-pkgname=ru.istu.cs.package.empty
+pkgname=breakingkeys.package.empty
 pkgver=0
 pkgrel=1
 epoch=
 pkgdesc="Empty package for initial repository db file creation."
 arch=('any')
-url="http://mirror.cs.istu.ru"
+url="http://mirror.breakingkeys.org"
 license=('GPL')
 groups=()
 depends=()
