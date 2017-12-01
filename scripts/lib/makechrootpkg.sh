@@ -87,6 +87,11 @@ make_chroot_pkg()
                 echo "$spkgfile does not exist, retrying..." >&2
             fi
         done
+        if [[ ! -f $spkgfile ]]
+        then
+            echo "Unable to find $cpkgname package file" >&2
+            return 1
+        fi
         add_to_db "$user" "$pkgfile"
         failed=0
         while ! chroot_run "$user" pacman --noconfirm -Sw "$cpkgname"
