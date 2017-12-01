@@ -40,7 +40,8 @@ raw_make_chroot_pkg()
     backup_pkgbuild
     {
         patch_makechrootpkg
-        sudo -u "$user" -g "$group" makepkg --nobuild --nodeps --skippgpcheck
+        sudo -u "$user" -g "$group" env "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" \
+            makepkg --nobuild --nodeps --skippgpcheck
         sed -r "s|^pkgrel=.*$|pkgrel=${reporel}|" -i PKGBUILD
         pkgversion="$(pkg_name_version ./PKGBUILD "$reporel")"
         "$makechrootpkg" -r "$chroot" -- --holdver --skippgpcheck "$@"
