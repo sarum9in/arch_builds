@@ -9,7 +9,8 @@ readonly makechrootpkg="$bindir/makechrootpkg"
 patch_makechrootpkg()
 {
     mkdir -p "$root/scripts/bin"
-    sed -r 's|--verifysource|& --skippgpcheck|' "$(which makechrootpkg)" >"$makechrootpkg"
+    sed -r 's|--verifysource|& --skippgpcheck --holdver|' \
+        "$(which makechrootpkg)" >"$makechrootpkg"
     chmod +x "$makechrootpkg"
 }
 
