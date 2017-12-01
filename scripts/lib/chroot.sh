@@ -52,13 +52,23 @@ init_keyring()
 sign_file()
 {
     local file="$1"
-    rm -f "${file}.sig"
-    sudo -u "$user" -g "$group" env "GPG_TTY=$GPG_TTY" \
-        gpg --detach-sign \
-            --local-user "$signkey" \
-            --use-agent \
-            --no-armor \
-            "$file"
+    while true
+    do
+        rm -f "${file}.sig"
+        if ! sudo -u "$user" -g "$group" env "GPG_TTY=$GPG_TTY" \
+            gpg --detach-sign \
+                --local-user "$signkey" \
+                --use-agent \
+                --no-armor \
+                "$file"
+        then
+            local readstub
+            echo "gpg --detach-sign failed, press enter to retry" >&2
+            read readstub
+        else
+            break
+        fi
+    done
 }
 
 new_chroot()
