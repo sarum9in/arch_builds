@@ -68,3 +68,6 @@
 [submodule "boost-nowide"]
 	path = cppcms/boost-nowide
 	url = https://github.com/sarum9in-aur/boost-nowide.git
+[submodule "python-wheezy"]
+	path = python-wheezy
+	url = https://github.com/sarum9in-aur/python-wheezy.git
