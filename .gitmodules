@@ -6,28 +6,24 @@
 	path = grpc
 	url = https://github.com/sarum9in-aur/grpc.git
 	ignore = untracked
-[submodule "obnam/obnam-git"]
-	path = obnam/obnam-git
-	url = https://github.com/sarum9in-aur/obnam-git.git
-	ignore = untracked
 [submodule "python-pika"]
 	path = python-pika
 	url = https://github.com/sarum9in-aur/python-pika.git
 	ignore = untracked
-[submodule "obnam/python2-cliapp-git"]
-	path = obnam/python2-cliapp-git
+[submodule "python2-cliapp-git"]
+	path = python2-cliapp-git
 	url = https://github.com/sarum9in-aur/python2-cliapp-git.git
 	ignore = untracked
-[submodule "obnam/python2-larch-git"]
-	path = obnam/python2-larch-git
+[submodule "python2-larch-git"]
+	path = python2-larch-git
 	url = https://github.com/sarum9in-aur/python2-larch-git.git
 	ignore = untracked
-[submodule "obnam/python2-tracing-git"]
-	path = obnam/python2-tracing-git
+[submodule "python2-tracing-git"]
+	path = python2-tracing-git
 	url = https://github.com/sarum9in-aur/python2-tracing-git.git
 	ignore = untracked
-[submodule "obnam/python2-ttystatus-git"]
-	path = obnam/python2-ttystatus-git
+[submodule "python2-ttystatus-git"]
+	path = python2-ttystatus-git
 	url = https://github.com/sarum9in-aur/python2-ttystatus-git.git
 	ignore = untracked
 [submodule "trellis-desk"]

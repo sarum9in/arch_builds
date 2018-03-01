@@ -78,6 +78,12 @@ do
     build-directory "patched/$pkg"
 done
 
+# Community support
+build python2-cliapp-git
+build python2-tracing-git
+build python2-larch-git
+build python2-ttystatus-git
+
 # Base libraries
 build turtle
 build turtle-git
@@ -98,7 +104,6 @@ build bacs/legacy/userlibs
 build bacs/legacy/web
 
 # Utils
-build obnam
 build ^arno-iptables-firewall
 build python-cram
 build ip-wait-online
