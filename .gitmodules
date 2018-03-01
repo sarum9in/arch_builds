@@ -71,3 +71,6 @@
 [submodule "python-wheezy"]
 	path = python-wheezy
 	url = https://github.com/sarum9in-aur/python-wheezy.git
+[submodule "hotdoc"]
+	path = hotdoc
+	url = https://github.com/sarum9in-aur/hotdoc.git
