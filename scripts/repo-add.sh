@@ -100,7 +100,6 @@ build bacs/legacy/web
 # Utils
 build obnam
 build ^arno-iptables-firewall
-build ^pacmixer
 build python-cram
 build ip-wait-online
 
