@@ -26,10 +26,6 @@
 	path = python2-ttystatus-git
 	url = https://github.com/sarum9in-aur/python2-ttystatus-git.git
 	ignore = untracked
-[submodule "trellis-desk"]
-	path = trellis-desk
-	url = https://github.com/sarum9in-aur/trellis-desk.git
-	ignore = untracked
 [submodule "turtle"]
 	path = turtle
 	url = https://github.com/sarum9in-aur/turtle.git
