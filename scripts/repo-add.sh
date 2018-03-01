@@ -12,21 +12,24 @@ clean()
 
 build()
 {
-    local pkg="$1"
-    if [[ ${pkg:0:1} = '^' ]]
-    then
-        if [[ -d "${pkg:1}" ]]
+    local pkg
+    for pkg
+    do
+        if [[ ${pkg:0:1} = '^' ]]
         then
-            build-directory "${pkg:1}"
-        elif [[ -d "patched/${pkg:1}" ]]
-        then
-            build-directory "patched/${pkg:1}"
+            if [[ -d "${pkg:1}" ]]
+            then
+                build-directory "${pkg:1}"
+            elif [[ -d "patched/${pkg:1}" ]]
+            then
+                build-directory "patched/${pkg:1}"
+            else
+                build-aur "${pkg:1}"
+            fi
         else
-            build-aur "${pkg:1}"
+            build-directory "$pkg"
         fi
-    else
-        build-directory "$pkg"
-    fi
+    done
 }
 
 build-directory()
