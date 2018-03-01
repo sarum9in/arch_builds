@@ -110,6 +110,7 @@ build bacs/legacy/web
 build ^arno-iptables-firewall
 build python-cram
 build ip-wait-online
+build ^python-wheezy ^python-schema hotdoc
 
 build ^cower
 build ^pacaur
