@@ -115,11 +115,6 @@ build-go \
     -D bunsan.pm-git,bunsan.broker-git \
     "bunsan.broker" git+https://github.com/bunsanorg/broker/...
 
-build-go \
-    -m "Aleksey Filippov <sarum9in@gmail.com>" \
-    -n go-manul-git \
-    "manul" git+https://github.com/kovetskiy/manul/...
-
 # Finalize repository creation
 rm -f "$chroot/$user/repo/${repo_name}.db.tar.gz.old"
 rm -f "$chroot/$user/repo/${repo_name}.db.tar.gz.old.sig"
