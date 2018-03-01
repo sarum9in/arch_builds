@@ -85,7 +85,6 @@ build python-pika
 build grpc
 build czmq
 build cppcms
-build boost.dll-git
 build ^libprotobuf2
 
 # Bunsan / Yandex.Contest / BACS
