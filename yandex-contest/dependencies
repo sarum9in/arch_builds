@@ -5,3 +5,4 @@ system invoker
 #invoker-compat-common invoker-compat-jni
 invoker invoker-flowctl-pipectl
 invoker invoker-flowctl-interactive
+../lxc204 system

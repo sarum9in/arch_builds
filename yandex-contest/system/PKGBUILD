@@ -9,7 +9,7 @@ license=('GPL')
 groups=()
 depends=(
   'yandex.contest.common-git'
-  'lxc'
+  'lxc204'
   'pkgconfig'
 )
 makedepends=(
