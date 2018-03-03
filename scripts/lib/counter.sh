@@ -8,6 +8,9 @@ update_reporel()
 {
     reporel=$((reporel + 1))
     sed -r "s|^(reporel=).*$|\1${reporel}|" -i "$counter_file"
+    git commit \
+        -v "$counter_file" \
+        -m "Updated scripts/lib/counter.sh to $reporel."
 }
 
 release_repo()
