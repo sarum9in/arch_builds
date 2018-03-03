@@ -10,6 +10,7 @@ pkg
 *.tar.gz
 *.tar.bz2
 *.log
+*.asc
 PKGBUILD.bak
 
 /mirror.cs.istu.ru.tar
