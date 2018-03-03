@@ -122,13 +122,4 @@ build-go \
     -D bunsan.pm-git,bunsan.broker-git \
     "bunsan.broker" git+https://github.com/bunsanorg/broker/...
 
-# Finalize repository creation
-rm -f "$chroot/$user/repo/${repo_name}.db.tar.gz.old"
-rm -f "$chroot/$user/repo/${repo_name}.db.tar.gz.old.sig"
-rm -f "$chroot/$user/repo/${repo_name}.files.tar.gz.old"
-tar cf "$root/${repo_name}.tar" \
-    --directory="$chroot/$user/repo" \
-    --owner=root:0 \
-    --group=root:0 \
-    .
-update_reporel
+release_repo
