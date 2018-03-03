@@ -3,6 +3,7 @@ _pkgname=lxc
 pkgname=lxc204
 pkgver=2.0.4
 pkgrel=1
+epoch=1
 pkgdesc="LXC is a userspace interface for the Linux kernel containment features."
 arch=('i686' 'x86_64')
 url="https://linuxcontainers.org/lxc/introduction/"
