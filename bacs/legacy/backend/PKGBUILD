@@ -18,6 +18,7 @@ depends=(
   'mono'
   'fpc'
   'java-environment'
+  'bacs.kturtle-git'
 )
 makedepends=(
   'bunsan.cmake-git'

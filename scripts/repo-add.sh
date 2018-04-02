@@ -96,6 +96,9 @@ build czmq
 build cppcms
 build ^libprotobuf2
 
+# BACS dependencies
+build bacs/kturtle
+
 # Bunsan / Yandex.Contest / BACS
 build bunsan
 build yandex-contest
