@@ -13,6 +13,8 @@ pkg
 *.log
 *.asc
 PKGBUILD.bak
+*-pkgver.log.*
+*-build.log.*
 
 /mirror.cs.istu.ru.tar
 /breakingkeys.tar
