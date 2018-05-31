@@ -66,3 +66,6 @@
 [submodule "hotdoc"]
 	path = hotdoc
 	url = https://github.com/sarum9in-aur/hotdoc.git
+[submodule "mtproxy-git"]
+	path = mtproxy-git
+	url = https://github.com/sarum9in-aur/mtproxy-git.git
